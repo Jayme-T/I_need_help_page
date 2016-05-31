@@ -1,7 +1,8 @@
 
 
-@import "reset";
-//can "import" any additional scss files here
+@import "reset"; //imports _reset.scss file
+@import "auth/auth"; //imports _auth.scss from /auth/ directory
+//you can "import" any additional scss files here
 //use naming syntax _newFile.scss
 //the "root" file is called style.scss and
 //  all others need the underscore prefix
@@ -13,5 +14,6 @@ margin-right: auto;
 }
 
 body {
-  background-color:rgb(244, 176, 4);
+  // background-color:rgb(244, 176, 4);
+  background-color: rgb(218, 218, 218);
 }

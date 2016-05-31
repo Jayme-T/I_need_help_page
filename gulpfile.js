@@ -14,7 +14,7 @@ var compass = require('gulp-compass'),
 const CSS_BUILD_DIR = path.resolve(__dirname, './public/css');
 
 gulp.task('watch', ['css-dev'], function() {
-   gulp.watch('./styles/*',  ['css-dev']);
+   gulp.watch('./styles/**/*',  ['css-dev']);
 });
 gulp.task('css-dev', function() {
    return gulp.src('./styles/**/*.scss')

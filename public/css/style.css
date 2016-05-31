@@ -445,13 +445,89 @@ textarea {
   /* 2 */
 }
 
-/* line 10, ../../styles/style.scss */
+/* line 1, ../../styles/auth/_auth.scss */
+.form-outer {
+  width: 275px;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+/* line 9, ../../styles/auth/_auth.scss */
+.form-outer .form-inner {
+  position: relative;
+  background-color: white;
+  border-radius: 3px;
+}
+/* line 13, ../../styles/auth/_auth.scss */
+.form-outer .form-inner input {
+  margin: 16px;
+  width: 88%;
+  height: 40px;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  border: none;
+  border-bottom: solid 2px #00796B;
+  outline: none;
+}
+/* line 24, ../../styles/auth/_auth.scss */
+.form-outer .form-inner .form-title-box {
+  height: 100px;
+  background: #00796B;
+  text-align: center;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+/* line 30, ../../styles/auth/_auth.scss */
+.form-outer .form-inner .form-title-box .title {
+  font-size: 36px;
+  padding: 28px;
+  margin: 0;
+}
+/* line 36, ../../styles/auth/_auth.scss */
+.form-outer .form-inner .btn-box {
+  height: 50px;
+  margin-top: 15px;
+}
+/* line 39, ../../styles/auth/_auth.scss */
+.form-outer .form-inner .btn-box .form-btn {
+  position: relative;
+  float: left;
+  text-align: center;
+  height: auto;
+  font-size: 20px;
+  padding: 11px;
+  border: none;
+  cursor: pointer;
+}
+/* line 48, ../../styles/auth/_auth.scss */
+.form-outer .form-inner .btn-box .form-btn:hover {
+  background-color: #00796b;
+}
+/* line 51, ../../styles/auth/_auth.scss */
+.form-outer .form-inner .btn-box .form-btn.large {
+  width: 60%;
+}
+/* line 54, ../../styles/auth/_auth.scss */
+.form-outer .form-inner .btn-box .form-btn.small {
+  width: 40%;
+}
+/* line 57, ../../styles/auth/_auth.scss */
+.form-outer .form-inner .btn-box .form-btn .text {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+/* line 11, ../../styles/style.scss */
 #form {
   margin-left: 35%;
   margin-right: auto;
 }
 
-/* line 15, ../../styles/style.scss */
+/* line 16, ../../styles/style.scss */
 body {
-  background-color: #f4b004;
+  background-color: #dadada;
 }
