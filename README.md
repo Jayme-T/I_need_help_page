@@ -9,4 +9,4 @@ goals of getting answers to coding not just sharing info like
 slack.
 
 We are just now getting started creating
-the site. Please feel free to ask questoins or make suggesting
+the site. Please feel free to ask questions or make suggestions

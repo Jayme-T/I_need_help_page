@@ -1,0 +1,17 @@
+
+
+@import "reset";
+//can "import" any additional scss files here
+//use naming syntax _newFile.scss
+//the "root" file is called style.scss and
+//  all others need the underscore prefix
+
+
+#form {
+margin-left: 35%;
+margin-right: auto;
+}
+
+body{
+  background-color:rgb(244, 176, 4);
+}
