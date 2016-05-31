@@ -499,26 +499,26 @@ textarea {
   text-align: center;
   height: auto;
   font-size: 20px;
-  padding: 11px;
   border: none;
   cursor: pointer;
 }
-/* line 48, ../../styles/auth/_auth.scss */
+/* line 47, ../../styles/auth/_auth.scss */
 .form-outer .form-inner .btn-box .form-btn:hover {
   background-color: #00796b;
 }
-/* line 51, ../../styles/auth/_auth.scss */
+/* line 50, ../../styles/auth/_auth.scss */
 .form-outer .form-inner .btn-box .form-btn.large {
   width: 60%;
 }
-/* line 54, ../../styles/auth/_auth.scss */
+/* line 53, ../../styles/auth/_auth.scss */
 .form-outer .form-inner .btn-box .form-btn.small {
   width: 40%;
 }
-/* line 57, ../../styles/auth/_auth.scss */
+/* line 56, ../../styles/auth/_auth.scss */
 .form-outer .form-inner .btn-box .form-btn .text {
   font-size: 1.2em;
   margin: 0;
+  padding: 11px;
 }
 
 /* line 11, ../../styles/style.scss */
