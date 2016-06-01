@@ -69,5 +69,30 @@
         border: 1px solid;
         float: left;
         cursor: pointer;
-    }    
+    }
+}
+#posts-list {
+    list-style: none;
+    padding: 0;
+}
+
+.test-form {
+    height: 150px;
+}
+
+.list-item {
+    width: 100%;
+    height: 20px;
+    border: solid 1px;
+    padding: 15px;
+    .item-text {
+        width: (1/4) * 100%;
+        float: left;
+        margin: 0;
+    }
+    .rmv {
+        width: (1/4) * 100%;
+        float: left;
+        margin: 0;
+    }
 }

@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Test Page</title>
+        <script src="https://use.fontawesome.com/bd68128bcd.js"></script>
         <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
     </head>
     <body>
@@ -47,13 +48,62 @@
         });
 
         function authed(user) {
-            var post = new Post(user.uid);
+            var firebaseDatabase = new FirebaseDatabase(user.uid);
+
             var button = document.getElementById('test-button');
                 button.addEventListener('click', function(e) {
                     var title = document.getElementById("title");
                     var body = document.getElementById("body");
-                    post.createNew(title.value, body.value);
+                    firebaseDatabase.createNewPost(title.value, body.value);
                 });
+
+            var postList = document.getElementById('posts-list');
+            function appendToList(item) {
+                var listitem = document.createElement('li');
+                    listitem.className = "list-item";
+                    listitem.data = item; //necessary! to hold data
+
+                    var rmv = document.createElement('i');
+                        rmv.className = "fa fa-times rmv";
+                        rmv.style.float = "left";
+                        rmv.addEventListener('click', removeFromList);
+
+                    var itemTitle = document.createElement('h3');
+                        itemTitle.className = 'item-text';
+                        itemTitle.innerHTML = item.title;
+                    var itemBody = document.createElement('p');
+                        itemBody.className = 'item-text';
+                        itemBody.innerHTML = item.body;
+                    var itemPID = document.createElement('p');
+                        itemPID.className = 'item-text';
+                        itemPID.innerHTML = item.pid;
+
+                listitem.appendChild(rmv);
+                listitem.appendChild(itemTitle);
+                listitem.appendChild(itemBody);
+                listitem.appendChild(itemPID);
+                postList.appendChild(listitem);
+
+            }
+
+            function removeFromList(e) {
+                if (e.target.className = 'list-item') {
+                    firebaseDatabase.deletePost(e.target.parentElement.data.pid);
+                    // firebaseDatabase.setPostIsFinished(e.target.parentElement.data.pid);
+                    e.target.parentElement.remove();
+                }
+            }
+
+
+            // firebaseDatabase.onPostAdded(function(data) {
+            //     appendToList(data);
+            // });
+            firebaseDatabase.onPostAdded(appendToList);
+
+            firebaseDatabase.onPostRemoved(function(data) {
+                console.log("data: ", data);
+            });
+
         }
     </script>
 
