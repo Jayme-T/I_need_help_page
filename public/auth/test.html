@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test Page</title>
+        <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <div class="test-form">
+            <div>
+                <input id="title" type="text" name="title" >
+            </div>
+            <div>
+                <textarea id="body" type="text" name="body" ></textarea>
+            </div>
+            <div id="test-button" class="test-btn">Send to database</div>
+        </div>
+
+        <div class="posts">
+            <ul id="posts-list"></ul>
+        </div>
+    </body>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <!-- TEMP -->
+    <script src="../js/helps.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyB-Yv2W_XARpu5sx1l9BDXaQ2SNTmIB0tc",
+          authDomain: "helpwithx.firebaseapp.com",
+          databaseURL: "https://helpwithx.firebaseio.com",
+          storageBucket: "helpwithx.appspot.com",
+        };
+        firebase.initializeApp(config);
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log("User Currently Signed in: ", user);
+            //route to posts
+            authed(user);
+          } else {
+            console.log("No user signed in: ", user);
+            //route to login
+
+          }
+        });
+
+        function authed(user) {
+            var post = new Post(user.uid);
+            var button = document.getElementById('test-button');
+                button.addEventListener('click', function(e) {
+                    var title = document.getElementById("title");
+                    var body = document.getElementById("body");
+                    post.createNew(title.value, body.value);
+                });
+        }
+    </script>
+
+</html>

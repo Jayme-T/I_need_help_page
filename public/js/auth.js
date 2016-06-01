@@ -57,6 +57,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 // firebase.auth().createUserWithEmailAndPassword()
 
 function handleLogin(e) {
+    // e.preventDefault();
+    // console.log("here?")
     var currUser = {
         email: loginInputs_email.value,
         password: loginInputs_password.value
@@ -67,8 +69,6 @@ function handleLogin(e) {
         alert(error.message);
         return; //don't route
     });
-
-    routeTo('login.html');
 }
 
 function handleRegister(e) {
@@ -81,11 +81,12 @@ function handleRegister(e) {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log("errors: ", errorCode, errorMessage);
+        return; //don't route
         // ...
     });
+    routeTo('/auth/login.html');
 }
 
-//
 // var help;
 // function helps(uid) {
 //

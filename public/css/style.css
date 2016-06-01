@@ -521,6 +521,15 @@ textarea {
   padding: 11px;
 }
 
+/* line 66, ../../styles/auth/_auth.scss */
+.test-form .test-btn {
+  width: auto;
+  padding: 22px;
+  border: 1px solid;
+  float: left;
+  cursor: pointer;
+}
+
 /* line 11, ../../styles/style.scss */
 #form {
   margin-left: 35%;
