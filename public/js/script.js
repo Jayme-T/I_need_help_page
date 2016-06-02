@@ -57,6 +57,7 @@ function runApp(user) {
         var itemTitle = document.createElement('h3');
         itemTitle.className = 'item-text';
         itemTitle.innerHTML = item.title;
+        //itemTitle.addEventListener('click', test);
         var itemBody = document.createElement('p');
         itemBody.className = 'item-text';
         itemBody.innerHTML = item.body;
@@ -77,8 +78,10 @@ function runApp(user) {
         listitem.appendChild(itemTitle);
         listitem.appendChild(editButton);
         listitem.appendChild(CommentButton);
+        //listitem.appendChild(itemBody);
 
-        // listitem.appendChild(itemBody);
+
+
         //I will add an event listenter and if you click on a topic
         //you can see the whole questions and provide answers.
         //That way long questions don't take the entire page.
@@ -110,6 +113,7 @@ function runApp(user) {
 
     }
 
+
     firebaseDatabase.onPostAdded(appendToList);
 
 
@@ -134,8 +138,17 @@ function runApp(user) {
         firebaseDatabase.deletePost(e.target.parentElement.data.pid);
         // firebaseDatabase.setPostIsFinished(e.target.parentElement.data.pid);
         e.target.parentElement.remove();
-        
+
       }
 
     }
+    // function test(e){
+    //   console.log(e.target.parentElement.data.body);
+    //   var para=document.createElement('p');
+    //   para.appendChild(e.target.parentElement.data.body);
+    //   //e.target.parentElement.data.body
+    // //e.target.data.('p.item-text').style.display="block";
+    //   // listitem.appendChild(itemBody);
+    // }
+
 }
