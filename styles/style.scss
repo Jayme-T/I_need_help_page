@@ -6,7 +6,7 @@
 //use naming syntax _newFile.scss
 //the "root" file is called style.scss and
 //  all others need the underscore prefix
-
+@import "global/notification";
 
 #form {
 margin-left: 35%;

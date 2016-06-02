@@ -45,16 +45,19 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log("User Currently Signed in: ", user);
     //route to posts
-        // routeTo('/index.html');
+    // routeTo('/index.html');
     // helps(user.uid);
+    var linkToHome = '<a href="/index.html">here</a>'
+    new Notification('success', 'You are signed in. Click ' + linkToHome + ' to go home.', "max");
   } else {
     console.log("No user signed in: ", user);
+    var linkToLogin = '<a href="/auth/login.html">login</a>';
+    var linkToRegister = '<a href="/auth/login.html">register</a>';
+    new Notification('error', 'No user currently signed in. Please '+linkToLogin+' or '+linkToRegister+'.', 5000);
     //route to login
-
   }
 });
 
-// firebase.auth().createUserWithEmailAndPassword()
 
 function handleLogin(e) {
     // e.preventDefault();
@@ -86,20 +89,6 @@ function handleRegister(e) {
     });
     routeTo('/auth/login.html');
 }
-
-// var help;
-// function helps(uid) {
-//
-//     help = new Help(uid);
-//     console.log("help: ", help)
-//
-//     help.createNew('New Post','This is the body of the post. Hello world!');
-//
-// }
-//
-// var posts = firebase.database().ref('user-posts').once('value').then(function(data) {
-//     console.log("data: ", data.val()); //this gets the values!!!!
-// });
 
 
 function routeTo(path) {

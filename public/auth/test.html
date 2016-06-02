@@ -50,6 +50,9 @@
         function authed(user) {
             var firebaseDatabase = new FirebaseDatabase(user.uid);
 
+            console.log("FIREBASE DATABASE: ", firebaseDatabase);
+
+
             var button = document.getElementById('test-button');
                 button.addEventListener('click', function(e) {
                     var title = document.getElementById("title");
@@ -59,6 +62,8 @@
 
             var postList = document.getElementById('posts-list');
             function appendToList(item) {
+                console.log("ITEM SNAPSHOT: ", item);
+                if (item.isFinished === true) return;
                 var listitem = document.createElement('li');
                     listitem.className = "list-item";
                     listitem.data = item; //necessary! to hold data
@@ -78,6 +83,7 @@
                         itemPID.className = 'item-text';
                         itemPID.innerHTML = item.pid;
 
+
                 listitem.appendChild(rmv);
                 listitem.appendChild(itemTitle);
                 listitem.appendChild(itemBody);
@@ -87,12 +93,22 @@
             }
 
             function removeFromList(e) {
-                if (e.target.className = 'list-item') {
-                    firebaseDatabase.deletePost(e.target.parentElement.data.pid);
-                    // firebaseDatabase.setPostIsFinished(e.target.parentElement.data.pid);
-                    e.target.parentElement.remove();
-                }
+
+                firebaseDatabase.deletePost(e.target.parentElement.data.pid);
+                // firebaseDatabase.setPostIsFinished(e.target.parentElement.data.pid);
+                e.target.parentElement.remove();
+
             }
+
+            var thing = {
+                'foo': 'bar'
+            };
+            var another = {
+                'foo': 'bar'
+            }
+
+
+
 
 
             // firebaseDatabase.onPostAdded(function(data) {
@@ -100,8 +116,15 @@
             // });
             firebaseDatabase.onPostAdded(appendToList);
 
+
+
+
             firebaseDatabase.onPostRemoved(function(data) {
-                console.log("data: ", data);
+                console.log("POST WAS REMOVED!: ", data);
+            });
+
+            firebaseDatabase.onPostUpdated(function(data) {
+                update();
             });
 
         }

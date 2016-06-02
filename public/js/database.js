@@ -7,8 +7,12 @@ var FirebaseDatabase = function(uid) {
 
 FirebaseDatabase.prototype.fetchAllPosts = function () {
     var posts = null;
-    
+
     return posts;
+};
+
+FirebaseDatabase.prototype.fetchAllFromUser = function () {
+
 };
 
 
@@ -25,6 +29,7 @@ FirebaseDatabase.prototype.fetchAllPosts = function () {
 */
 FirebaseDatabase.prototype.onPostAdded = function (callback) {
     firebase.database().ref('posts/').on('child_added', function(snapshot) {
+        console.log("snapshot: ", snapshot.val());
         return callback(snapshot.val());
     });
 };
