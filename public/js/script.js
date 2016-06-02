@@ -143,7 +143,7 @@ function runApp(user) {
 
     }
     function test(e){
-      console.log("button working");
+      //console.log("button working");
  //      var url = 'https://maps.googleapis.com/maps/api/directions/json?origin=' + start.value + '&destination=' + destination.value;
  // var finalurl = jsonp + encodeURIComponent(url);
  var url= "http://localhost:8080/index.html";
@@ -151,8 +151,10 @@ function runApp(user) {
   var pid= e.target.parentElement.data.pid;
   var finalurl= url+ "?" + pid;
   console.log(finalurl);
- window.open(finalurl);
-    }
+  var myWindow = window.open(finalurl, "_self");
+ //window.open(finalurl);
+
+  }
 
     // function test(e){
     //   console.log(e.target.parentElement.data.body);
@@ -182,5 +184,4 @@ function runApp(user) {
             }
         });
     }
-
 }
