@@ -75,7 +75,7 @@ function runApp(user) {
                 //   console.log(itemUID.innerHTML);
                 //   console.log(user);
                   if(e.target.parentElement.data.uid !== user.uid){
-                    console.log("can't remove a post you didn't write");
+                    alert("can't remove a post you didn't write");
                   }
                   else {
 
