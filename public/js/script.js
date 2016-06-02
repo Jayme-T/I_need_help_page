@@ -158,16 +158,18 @@ function runApp(user) {
     var querySlug = window.location.search;
     var currentPagePID = querySlug.substring(querySlug.indexOf("=") + 1, querySlug.length);
     console.log("currentPagePID: ", currentPagePID);
-    firebaseDatabase.fetchSinglePost(currentPagePID, function(post) {
-        console.log("post: ", post);
-        if (post) { //if post data is not null,
-            //open modal
-            var testTitle = document.createElement('h4');
-                testTitle.innerHTML = post.title;
-            var testBody = document.createElement('h4');
-                testBody.innerHTML = post.body;
-            new Modal(testBody);
-        }
-    });
+    if (currentPagePID !== "") {
+        firebaseDatabase.fetchSinglePost(currentPagePID, function(post) {
+            console.log("post: ", post);
+            if (post) { //if post data is not null,
+                //open modal
+                var testTitle = document.createElement('h4');
+                    testTitle.innerHTML = post.title;
+                var testBody = document.createElement('h4');
+                    testBody.innerHTML = post.body;
+                new Modal(testBody);
+            }
+        });
+    }
 
 }
