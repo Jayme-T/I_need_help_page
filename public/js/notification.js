@@ -1,3 +1,4 @@
+'use strict';
 
 var Notification = function(type, message, time) {
    this.type = type; //must be error or success
@@ -7,10 +8,11 @@ var Notification = function(type, message, time) {
 
    if (time !== "max") {
        this.time = (!time) ? 3000 : time;
-   } else this.time = 600000; //10 minutes
+   } else {this.time = 600000; //10 minutes
 
    //run
    this.show();
+ }
 };
 
 Notification.prototype.show = function () {
@@ -25,7 +27,8 @@ Notification.prototype.show = function () {
          //ensures that notification list is created first
          //if not, calls render as callback after appending list ul to body
          this.createList(this.render.bind(this)); //bind to attach this portal to render method
-      } else this.render();
+      } else {this.render();
+      }
    }
 };
 
@@ -64,7 +67,7 @@ Notification.prototype.unmount = function () {
 Notification.prototype.hasList = function() {
    var notif = document.querySelector('.notification-list');
    return (!notif) ? false : true; //if notification-list is falsy, return false, else true
-}
+};
 
 Notification.prototype.createList = function(callback) {
    var list = document.createElement('div');
@@ -74,4 +77,4 @@ Notification.prototype.createList = function(callback) {
 
    return callback();
 
-}
+};

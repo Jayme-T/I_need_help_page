@@ -3,7 +3,7 @@
 //initialize
 var FirebaseDatabase = function(uid) {
     this.uid = uid;
-}
+};
 
 FirebaseDatabase.prototype.fetchAllPosts = function () {
     var posts = null;
@@ -50,6 +50,7 @@ FirebaseDatabase.prototype.onPostAdded = function (callback) {
 FirebaseDatabase.prototype.onPostRemoved = function (callback) {
     firebase.database().ref('posts/').on('child_removed', function(snapshot) {
         return callback(snapshot.val());
+        
     });
 };
 

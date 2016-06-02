@@ -8,6 +8,7 @@ var config = {
   databaseURL: "https://helpwithx.firebaseio.com",
   storageBucket: "helpwithx.appspot.com",
 };
+
 firebase.initializeApp(config);
 
 
@@ -47,7 +48,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     //route to posts
     // routeTo('/index.html');
     // helps(user.uid);
-    var linkToHome = '<a href="/index.html">here</a>'
+    var linkToHome = '<a href="/index.html">here</a>';
     new Notification('success', 'You are signed in. Click ' + linkToHome + ' to go home.', "max");
   } else {
     console.log("No user signed in: ", user);
@@ -59,7 +60,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 
-function handleLogin(e) {
+function handleLogin(e){
     // e.preventDefault();
     // console.log("here?")
     var currUser = {
@@ -73,7 +74,7 @@ function handleLogin(e) {
         return; //don't route
     });
 }
-
+console.log(registerInputs_email.value);
 function handleRegister(e) {
     var currUser = {
         email: registerInputs_email.value,
