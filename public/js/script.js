@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     runApp(user);
   } else {
     console.log("No user signed in: ", user);
-    //route to login
+    //route to login page
     window.location.assign('/auth/login.html');
   }
 });
@@ -27,21 +27,18 @@ function runApp(user) {
     var firebaseDatabase = new FirebaseDatabase(user.uid);
 
 
-    //write code here
-}
+    //main app code here
+    document.querySelector('#press').addEventListener('click', userClicksAButton);
 
+    function userClicksAButton() {
+      console.log('test');
 
+    	var inputtedData = {
+    		title: document.querySelector('#title'),
+    		body: document.querySelector('textarea')
+    	};
+    console.log(inputtedData);
+    	// Post.createNew(inputtedData);
+    }
 
-//main app code here
-document.querySelector('#press').addEventListener('click', userClicksAButton);
-
-function userClicksAButton() {
-  console.log('test');
-
-	var inputtedData = {
-		title: document.querySelector('#title'),
-		body: document.querySelector('textarea')
-	};
-console.log(inputtedData);
-	// Post.createNew(inputtedData);
 }

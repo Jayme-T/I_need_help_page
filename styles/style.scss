@@ -7,6 +7,12 @@
 //the "root" file is called style.scss and
 //  all others need the underscore prefix
 @import "global/notification";
+@import "global/modal";
+
+
+* {
+    box-sizing: border-box;
+}
 
 #form {
 margin-left: 35%;
@@ -16,4 +22,49 @@ margin-right: auto;
 body {
   // background-color:rgb(244, 176, 4);
   background-color: rgb(218, 218, 218);
+}
+
+.nav-bar {
+    height: 60px;
+    background: aliceblue;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.69);
+    margin-bottom: 10px;
+    top: 0;
+    left: 0;
+    position: relative;
+    .user-icon {
+        position: absolute;
+        right: 1%;
+        padding: 15px;
+        font-size: 25px;
+    }
+}
+$btn-color: rgb(84, 150, 179);
+.user-settings-inner {
+    input {
+        height: 50px;
+        width: 100%;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .input-label {
+        margin: 0;
+        margin-bottom: 5px;
+    }
+    .btn {
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+        border: solid 1px rgba(100, 100, 100, 0.6);
+        cursor: pointer;
+        background-color: $btn-color;
+        font-size: 16px;
+        color: white;
+        &:hover {
+            background-color: darken($btn-color, 15%);
+        }
+    }
+    .section-title {
+        text-align: center;
+    }
 }

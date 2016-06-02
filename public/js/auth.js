@@ -8,7 +8,6 @@ var config = {
   databaseURL: "https://helpwithx.firebaseio.com",
   storageBucket: "helpwithx.appspot.com",
 };
-
 firebase.initializeApp(config);
 
 
@@ -49,49 +48,74 @@ firebase.auth().onAuthStateChanged(function(user) {
     // routeTo('/index.html');
     // helps(user.uid);
     var linkToHome = '<a href="/index.html">here</a>';
-    new Notification('success', 'You are signed in. Click ' + linkToHome + ' to go home.', "max");
+    new Notification('success', 'You are signed in. Click ' + linkToHome + ' to go home.', 3000);
   } else {
     console.log("No user signed in: ", user);
     var linkToLogin = '<a href="/auth/login.html">login</a>';
     var linkToRegister = '<a href="/auth/login.html">register</a>';
-    new Notification('error', 'No user currently signed in. Please '+linkToLogin+' or '+linkToRegister+'.', 5000);
+    // new Notification('error', 'No user currently signed in. Please '+linkToLogin+' or '+linkToRegister+'.', 3000);
     //route to login
   }
 });
 
 
-function handleLogin(e){
+function handleLogin(e) {
     // e.preventDefault();
     // console.log("here?")
+    loadingButton(e.target);
     var currUser = {
         email: loginInputs_email.value,
         password: loginInputs_password.value
     }
-    firebase.auth().signInWithEmailAndPassword(currUser.email, currUser.password).catch(function(error) {
-        // Handle Errors here.
-        console.log("errors: ", error.code, error.message);
-        alert(error.message);
-        return; //don't route
-    });
+    firebase.auth().signInWithEmailAndPassword(currUser.email, currUser.password)
+        .then(function() {
+            resetLoadingButton(e.target);
+        }, function(error) {
+            // Handle Errors here.
+            resetLoadingButton(e.target);
+            console.log("errors: ", error.code, error.message);
+            new Notification('error', error.message, 3000);
+            return; //don
+        });
 }
-console.log(registerInputs_email.value);
+
 function handleRegister(e) {
+    loadingButton(e.target);
     var currUser = {
         email: registerInputs_email.value,
         password: registerInputs_password.value
     };
-    firebase.auth().createUserWithEmailAndPassword(currUser.email, currUser.password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log("errors: ", errorCode, errorMessage);
-        return; //don't route
+    firebase.auth().createUserWithEmailAndPassword(currUser.email, currUser.password)
+        .then(function() {
+            resetLoadingButton(e.target);
+        }, function(error) {
+            // Handle Errors here.
+            resetLoadingButton(e.target);
+            console.log("errors: ", error.code, error.message);
+            new Notification('error', error.message, 3000);
+            return; //don
+        });
+    // .catch(function(error) {
+        // // Handle Errors here.
+        // var errorCode = error.code;
+        // var errorMessage = error.message;
+        // console.log("errors: ", errorCode, errorMessage);
+        // return; //don't route
         // ...
-    });
-    routeTo('/auth/login.html');
+    // });
+    // routeTo('/auth/login.html');
 }
 
 
 function routeTo(path) {
     window.location.assign(path);
+}
+
+function loadingButton(btn) {
+    btn.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>';
+    btn.style.fontSize = "9px";
+}
+function resetLoadingButton(btn) {
+    btn.innerHTML = "Save";
+    btn.style.fontSize = null;
 }

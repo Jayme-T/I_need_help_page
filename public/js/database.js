@@ -11,8 +11,8 @@ FirebaseDatabase.prototype.fetchAllPosts = function () {
     return posts;
 };
 
-FirebaseDatabase.prototype.fetchAllFromUser = function () {
-
+FirebaseDatabase.prototype.fetchAllPostsFromUser = function () {
+    
 };
 
 
@@ -50,7 +50,7 @@ FirebaseDatabase.prototype.onPostAdded = function (callback) {
 FirebaseDatabase.prototype.onPostRemoved = function (callback) {
     firebase.database().ref('posts/').on('child_removed', function(snapshot) {
         return callback(snapshot.val());
-        
+
     });
 };
 
