@@ -6,13 +6,13 @@ var FirebaseDatabase = function(uid) {
 };
 
 FirebaseDatabase.prototype.fetchAllPosts = function () {
+    //not needed right now, can use event listener onPostAdded on page load to get all posts
     var posts = null;
-
     return posts;
 };
 
 FirebaseDatabase.prototype.fetchAllPostsFromUser = function () {
-    
+    /**FIXME: Fetch all from user-posts*/
 };
 
 
@@ -129,67 +129,3 @@ FirebaseDatabase.prototype.deletePost = function (pid) {
     //remove the post with this pid in the 'user-posts' table
     firebase.database().ref('/user-posts/' + this.uid + '/' + pid).set(null);
 };
-
-
-
-//
-// var Post = function(uid) {
-//     this.uid = uid;
-//     this.pid = null;
-//
-//     this.setPID = function(pid) {
-//         this.pid = pid;
-//     }
-// }
-//
-// Post.prototype.fetchAll = function () {
-//     //fetch all 'helps' of all users
-//     return null;
-// };
-// Post.prototype.fetchAllFromUser = function () {
-//     //fetch all 'helps' of current user
-//     return null;
-// };
-//
-// Post.prototype.createNew = function (title, body) {
-//     console.log("here? ", title, body);
-//     console.log("user: ", this.uid)
-//
-//     // Get a key for a new Post.
-//     var uniquePostId = firebase.database().ref().child('posts').push().key;
-//
-//     this.setPID(uniquePostId);
-//     console.log("uniquePostId: ", uniquePostId);
-//     // Write the new post's data simultaneously in the posts list and the user's post list.
-//     // var updates = {};
-//     //     updates['/posts/' + uniquePostId] = postData;
-//     //     updates['/user-posts/' + uid + '/' + uniquePostId] = postData;
-//
-//     // Data to send
-//     var postData = {
-//         uid: this.uid,
-//         body: body,
-//         title: title,
-//         starCount: 0,
-//         pid: uniquePostId
-//     };
-//     //save to database per user
-//     firebase.database().ref('/user-posts/'+this.uid+'/'+uniquePostId).set(postData);
-//     //save to database as post
-//     firebase.database().ref('/posts/'+uniquePostId).set(postData);
-//     // return firebase.database().ref('/user-posts/'+newPostKey+"/").set(postData);
-// };
-//
-// Post.prototype.deletePost = function () {
-//     // var updates = {};
-//     //     updates['/posts/' + this.pid] = null;
-//     //     updates['/user-posts/' + this.uid + '/' + this.pid] = null;
-//     console.log("______ DELETE _______");
-//     console.log("PID: " + this.pid + " *** UID: " + this.uid);
-//     firebase.database().ref('/posts/' + this.pid).set(null).then(function() {
-//         firebase.database().ref('/user-posts/' + this.uid + '/' + this.pid).set(null);
-//     }.bind(this));
-//
-//     console.log("______ DELETE _______");
-//     // return firebase.database().ref().update(updates);
-// };

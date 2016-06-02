@@ -103,10 +103,10 @@ function logoutUser() {
         // Sign-out successful.
         new Notification('success', 'You have successfully logged out', 3000);
         setTimeout(function() {
-            window.location.assign("/auth/login.html");
+            window.location.assign("/auth/login.html?u=lo");
         }, 3100);
     }, function(error) {
-        // An error happened.
+        new Notification('error', 'There was an error logging out. Please try again.', 3000);
     });
 }
 
@@ -141,51 +141,3 @@ function showNoUserSettings(e) {
 function routeTo(path) {
     window.location.assign(path);
 }
-
-// function handleLogin(e) {
-//     loadingButton(e.target);
-//     var currUser = {
-//         email: loginInputs_email.value,
-//         password: loginInputs_password.value
-//     }
-//     firebase.auth().signInWithEmailAndPassword(currUser.email, currUser.password)
-//         .then(function() {
-//             resetLoadingButton(e.target);
-//         }, function(error) {
-//             // Handle Errors here.
-//             resetLoadingButton(e.target);
-//             console.log("errors: ", error.code, error.message);
-//             new Notification('error', error.message, 3000);
-//         });
-// }
-//
-// function handleRegister(e) {
-//     loadingButton(e.target);
-//     var currUser = {
-//         email: registerInputs_email.value,
-//         password: registerInputs_password.value
-//     };
-//     firebase.auth().createUserWithEmailAndPassword(currUser.email, currUser.password)
-//         .then(function() {
-//             resetLoadingButton(e.target);
-//         }, function(error) {
-//             // Handle Errors here.
-//             resetLoadingButton(e.target);
-//             console.log("errors: ", error.code, error.message);
-//             new Notification('error', error.message, 3000);
-//         });
-// }
-//
-// firebase.auth().onAuthStateChanged(function(user) {
-//   if (user) {
-//     console.log("User Currently Signed in: ", user);
-//     var linkToHome = '<a href="/index.html">here</a>';
-//     new Notification('success', 'You are signed in. Click ' + linkToHome + ' to go home.', 3000);
-//   } else {
-//     console.log("No user signed in: ", user);
-//     var linkToLogin = '<a href="/auth/login.html">login</a>';
-//     var linkToRegister = '<a href="/auth/login.html">register</a>';
-//     new Notification('error', 'No user currently signed in. Please '+linkToLogin+' or '+linkToRegister+'.', 3000);
-//     //route to login
-//   }
-// });

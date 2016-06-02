@@ -42,20 +42,19 @@ var gotoLogin = document.getElementById('goto-login');
 
 
 firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    console.log("User Currently Signed in: ", user);
-    //route to posts
-    // routeTo('/index.html');
-    // helps(user.uid);
-    var linkToHome = '<a href="/index.html">here</a>';
-    new Notification('success', 'You are signed in. Click ' + linkToHome + ' to go home.', 3000);
-  } else {
-    console.log("No user signed in: ", user);
-    var linkToLogin = '<a href="/auth/login.html">login</a>';
-    var linkToRegister = '<a href="/auth/login.html">register</a>';
-    // new Notification('error', 'No user currently signed in. Please '+linkToLogin+' or '+linkToRegister+'.', 3000);
-    //route to login
-  }
+    if (user) {
+        console.log("User Currently Signed in: ", user);
+        //route to posts
+        // routeTo('/index.html');
+        // helps(user.uid);
+        var linkToHome = '<a href="/index.html">here</a>';
+        new Notification('success', 'You are signed in. Click ' + linkToHome + ' to go home.', 3000);
+    } else {
+        console.log("No user signed in: ", user);
+        var linkToLogin = '<a href="/auth/login.html">login</a>';
+        var linkToRegister = '<a href="/auth/login.html">register</a>';
+        // new Notification('error', 'No user currently signed in. Please '+linkToLogin+' or '+linkToRegister+'.', 3000);
+    }
 });
 
 
@@ -95,15 +94,6 @@ function handleRegister(e) {
             new Notification('error', error.message, 3000);
             return; //don
         });
-    // .catch(function(error) {
-        // // Handle Errors here.
-        // var errorCode = error.code;
-        // var errorMessage = error.message;
-        // console.log("errors: ", errorCode, errorMessage);
-        // return; //don't route
-        // ...
-    // });
-    // routeTo('/auth/login.html');
 }
 
 
