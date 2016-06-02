@@ -5,6 +5,12 @@ var FirebaseDatabase = function(uid) {
     this.uid = uid;
 };
 
+FirebaseDatabase.prototype.fetchSinglePost = function (pid, callback) {
+    firebase.database().ref('posts/'+pid).once('value', function(snapshot) {
+        return callback(snapshot.val());
+    });
+};
+
 FirebaseDatabase.prototype.fetchAllPosts = function () {
     //not needed right now, can use event listener onPostAdded on page load to get all posts
     var posts = null;
@@ -29,7 +35,7 @@ FirebaseDatabase.prototype.fetchAllPostsFromUser = function () {
 */
 FirebaseDatabase.prototype.onPostAdded = function (callback) {
     firebase.database().ref('posts/').on('child_added', function(snapshot) {
-        console.log("snapshot: ", snapshot.val());
+        // console.log("snapshot: ", snapshot.val());
         return callback(snapshot.val());
     });
 };

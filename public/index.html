@@ -16,16 +16,19 @@
         </div>
     </div>
     <div id="form">
-        <form>
+        <!-- <form> If you remove the form element wrapper,
+             the page won't reload on click of the button.
+             That way the question is simply added to the list, rather
+             than refreshing and adding, makes the pages smoother.
+        -->
           <label> subject of question
           <input id="title">
           </label>
           <div>
-            <textarea rows="10" cols="50">
-            </textarea>
+            <textarea rows="10" cols="50"></textarea>
             <input type="submit" id="press">
           </div>
-        </form>
+        <!-- </form> -->
     </div>
     <form id="questionStyle">
       <p> You can choose how you would like questions sorted </p>

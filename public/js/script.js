@@ -134,8 +134,25 @@ function runApp(user) {
         firebaseDatabase.deletePost(e.target.parentElement.data.pid);
         // firebaseDatabase.setPostIsFinished(e.target.parentElement.data.pid);
         e.target.parentElement.remove();
-        
+
       }
 
     }
+
+    //if url query has pid=slug, open modal with that info
+    console.log("location: ", window.location);
+    var querySlug = window.location.search;
+    var currentPagePID = querySlug.substring(querySlug.indexOf("=") + 1, querySlug.length);
+    console.log("currentPagePID: ", currentPagePID);
+    firebaseDatabase.fetchSinglePost(currentPagePID, function(post) {
+        console.log("post: ", post);
+        if (post) { //if post data is not null,
+            //open modal
+            var testTitle = document.createElement('h4');
+                testTitle.innerHTML = post.title;
+            var testBody = document.createElement('h4');
+                testBody.innerHTML = post.body;
+            new Modal(testBody);
+        }
+    });
 }
