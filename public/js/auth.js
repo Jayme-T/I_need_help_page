@@ -61,38 +61,38 @@ firebase.auth().onAuthStateChanged(function(user) {
 function handleLogin(e) {
     // e.preventDefault();
     // console.log("here?")
-    loadingButton(e.target);
+    var currButtonHTML = loadingButton(e.target);
     var currUser = {
         email: loginInputs_email.value,
         password: loginInputs_password.value
     }
     firebase.auth().signInWithEmailAndPassword(currUser.email, currUser.password)
         .then(function() {
-            resetLoadingButton(e.target);
+            resetLoadingButton(e.target, currButtonHTML);
+            routeTo('/index.html');
         }, function(error) {
             // Handle Errors here.
-            resetLoadingButton(e.target);
+            resetLoadingButton(e.target, currButtonHTML);
             console.log("errors: ", error.code, error.message);
             new Notification('error', error.message, 3000);
-            return; //don
         });
 }
 
 function handleRegister(e) {
-    loadingButton(e.target);
+    var currButtonHTML = loadingButton(e.target);
     var currUser = {
         email: registerInputs_email.value,
         password: registerInputs_password.value
     };
     firebase.auth().createUserWithEmailAndPassword(currUser.email, currUser.password)
         .then(function() {
-            resetLoadingButton(e.target);
+            resetLoadingButton(e.target, currButtonHTML);
+            routeTo('/auth/login.html');
         }, function(error) {
             // Handle Errors here.
-            resetLoadingButton(e.target);
+            resetLoadingButton(e.target, currButtonHTML);
             console.log("errors: ", error.code, error.message);
             new Notification('error', error.message, 3000);
-            return; //don
         });
 }
 
@@ -102,10 +102,12 @@ function routeTo(path) {
 }
 
 function loadingButton(btn) {
+    var currStr = btn.innerHTML;
     btn.innerHTML = '<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>';
     btn.style.fontSize = "9px";
+    return currStr;
 }
-function resetLoadingButton(btn) {
-    btn.innerHTML = "Save";
+function resetLoadingButton(btn, resetStr) {
+    btn.innerHTML = resetStr;
     btn.style.fontSize = null;
 }
