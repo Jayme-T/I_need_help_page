@@ -65,8 +65,13 @@ function runApp(user) {
 
                 listitem.appendChild(rmv);
                 listitem.appendChild(itemTitle);
-                listitem.appendChild(itemBody);
-                listitem.appendChild(itemPID);
+                //listitem.appendChild(itemBody);
+                //I will add an event listenter and if you click on a topic
+                //you can see the whole questions and provide answers.
+                //That way long questions don't take the entire page.
+
+                //no need for people to see the PID
+                //listitem.appendChild(itemPID);
                 postList.appendChild(listitem);
 
                 function removeFromList(e) {
