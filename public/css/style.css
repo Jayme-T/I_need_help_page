@@ -738,3 +738,6 @@ body {
 #Edit{
   margin:10;
 }
+p.item-text{
+  display:none;
+}

@@ -57,6 +57,7 @@ function runApp(user) {
         var itemTitle = document.createElement('h3');
         itemTitle.className = 'item-text';
         itemTitle.innerHTML = item.title;
+        //itemTitle.addEventListener('click', test);
         var itemBody = document.createElement('p');
         itemBody.className = 'item-text';
         itemBody.innerHTML = item.body;
@@ -77,8 +78,10 @@ function runApp(user) {
         listitem.appendChild(itemTitle);
         listitem.appendChild(editButton);
         listitem.appendChild(CommentButton);
+        //listitem.appendChild(itemBody);
 
-        // listitem.appendChild(itemBody);
+
+
         //I will add an event listenter and if you click on a topic
         //you can see the whole questions and provide answers.
         //That way long questions don't take the entire page.
@@ -110,6 +113,7 @@ function runApp(user) {
 
     }
 
+
     firebaseDatabase.onPostAdded(appendToList);
 
 
@@ -139,6 +143,16 @@ function runApp(user) {
 
     }
 
+    // function test(e){
+    //   console.log(e.target.parentElement.data.body);
+    //   var para=document.createElement('p');
+    //   para.appendChild(e.target.parentElement.data.body);
+    //   //e.target.parentElement.data.body
+    // //e.target.data.('p.item-text').style.display="block";
+    //   // listitem.appendChild(itemBody);
+    // }
+
+
     //if url query has pid=slug, open modal with that info
     console.log("location: ", window.location);
     var querySlug = window.location.search;
@@ -155,4 +169,5 @@ function runApp(user) {
             new Modal(testBody);
         }
     });
+
 }
