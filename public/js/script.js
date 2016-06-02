@@ -57,7 +57,6 @@ function runApp(user) {
         var itemTitle = document.createElement('h3');
         itemTitle.className = 'item-text';
         itemTitle.innerHTML = item.title;
-        //itemTitle.addEventListener('click', test);
         var itemBody = document.createElement('p');
         itemBody.className = 'item-text';
         itemBody.innerHTML = item.body;
@@ -72,6 +71,7 @@ function runApp(user) {
         var CommentButton=document.createElement('button');
         CommentButton.innerHTML="Comment";
         CommentButton.style.marginLeft="40px";
+        CommentButton.addEventListener('click', test);
          //CommentButton.addEventListner('click', comment());
 
         listitem.appendChild(rmv);
@@ -141,6 +141,17 @@ function runApp(user) {
 
       }
 
+    }
+    function test(e){
+      console.log("button working");
+ //      var url = 'https://maps.googleapis.com/maps/api/directions/json?origin=' + start.value + '&destination=' + destination.value;
+ // var finalurl = jsonp + encodeURIComponent(url);
+ var url= "http://localhost:8080/index.html";
+
+  var pid= e.target.parentElement.data.pid;
+  var finalurl= url+ "?" + pid;
+  console.log(finalurl);
+ window.open(finalurl);
     }
 
     // function test(e){
