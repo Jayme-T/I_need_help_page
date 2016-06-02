@@ -74,10 +74,14 @@ function runApp(user) {
                   // console.log(user.uid);
                 //   console.log(itemUID.innerHTML);
                 //   console.log(user);
+
+
                   if(e.target.parentElement.data.uid !== user.uid){
-                    alert("can't remove a post you didn't write");
+                    new Notification('error', "can't remove a question you didn't write", 3000)
+
                   }
                   else {
+                    new Notification('success', 'question removed', 3000)
 
               firebaseDatabase.deletePost(e.target.parentElement.data.pid);
               // firebaseDatabase.setPostIsFinished(e.target.parentElement.data.pid);
