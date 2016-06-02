@@ -67,11 +67,11 @@ function runApp(user) {
         var editButton=document.createElement('button');
         editButton.innerHTML="Edit";
         editButton.style.marginLeft="40px";
-        // editButton.addEventListener('click', edit());
+       editButton.addEventListener('click', edit);
         var CommentButton=document.createElement('button');
         CommentButton.innerHTML="Comment";
         CommentButton.style.marginLeft="40px";
-        // CommentButton.addEventListner('click', comment());
+         //CommentButton.addEventListner('click', comment());
 
         listitem.appendChild(rmv);
         listitem.appendChild(itemTitle);
@@ -122,4 +122,20 @@ function runApp(user) {
         console.log("POST WAS EDITED!: ", data);
 
     });
+    function edit(e){
+      if (e.target.parentElement.data.uid !== user.uid) {
+          new Notification('error', "can't edit a question you didn't write", 3000)
+
+      }
+      else{
+        document.querySelector('textarea').value=e.target.parentElement.data.body;
+        document.querySelector('#title').value=e.target.parentElement.data.title;
+        window.scrollTo(0, 0);
+        firebaseDatabase.deletePost(e.target.parentElement.data.pid);
+        // firebaseDatabase.setPostIsFinished(e.target.parentElement.data.pid);
+        e.target.parentElement.remove();
+        
+      }
+
+    }
 }
