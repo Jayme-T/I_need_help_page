@@ -22,19 +22,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function runApp(user) {
-  document.querySelector('#newest').addEventListener('click', newer);
-  document.querySelector('#oldest').addEventListener('click', oldest);
-  document.querySelector('#uid').addEventListener('click', onlyusers);
-      //main app code here
-  function newer() {
-    console.log("new");
-  }
-  function oldest() {
-    console.log("old");
-  }
-  function onlyusers() {
-    console.log("uid");
-  }
+
+
     //console.log("user: ", user);
     var firebaseDatabase = new FirebaseDatabase(user.uid);
 
@@ -51,6 +40,8 @@ function runApp(user) {
     console.log(postList);
 
     function appendToList(item) {
+
+        //main app code here
 
         if (item.isFinished === true) {
             return;
@@ -75,15 +66,15 @@ function runApp(user) {
         itemPID.className = 'item-text';
         itemPID.innerHTML = item.pid;
 
-        var editButton=document.createElement('button');
-        editButton.innerHTML="Edit";
-        editButton.style.marginLeft="40px";
-       editButton.addEventListener('click', edit);
-        var CommentButton=document.createElement('button');
-        CommentButton.innerHTML="Comment";
-        CommentButton.style.marginLeft="40px";
+        var editButton = document.createElement('button');
+        editButton.innerHTML = "Edit";
+        editButton.style.marginLeft = "40px";
+        editButton.addEventListener('click', edit);
+        var CommentButton = document.createElement('button');
+        CommentButton.innerHTML = "Comment";
+        CommentButton.style.marginLeft = "40px";
         //CommentButton.addEventListener('click', querystring);
-         //CommentButton.addEventListner('click', comment());
+        //CommentButton.addEventListner('click', comment());
 
         listitem.appendChild(rmv);
         listitem.appendChild(itemTitle);
@@ -106,7 +97,6 @@ function runApp(user) {
             // console.log(user.uid);
             //   console.log(itemUID.innerHTML);
             //   console.log(user);
-
 
             if (e.target.parentElement.data.uid !== user.uid) {
                 new Notification('error', "can't remove a question you didn't write", 3000)
@@ -137,35 +127,35 @@ function runApp(user) {
         console.log("POST WAS EDITED!: ", data);
 
     });
-    function edit(e){
-      if (e.target.parentElement.data.uid !== user.uid) {
-          new Notification('error', "can't edit a question you didn't write", 3000)
 
-      }
-      else{
-        document.querySelector('textarea').value=e.target.parentElement.data.body;
-        document.querySelector('#title').value=e.target.parentElement.data.title;
-        window.scrollTo(0, 0);
-        firebaseDatabase.deletePost(e.target.parentElement.data.pid);
-        // firebaseDatabase.setPostIsFinished(e.target.parentElement.data.pid);
-        e.target.parentElement.remove();
+    function edit(e) {
+        if (e.target.parentElement.data.uid !== user.uid) {
+            new Notification('error', "can't edit a question you didn't write", 3000)
 
-      }
+        } else {
+            document.querySelector('textarea').value = e.target.parentElement.data.body;
+            document.querySelector('#title').value = e.target.parentElement.data.title;
+            window.scrollTo(0, 0);
+            firebaseDatabase.deletePost(e.target.parentElement.data.pid);
+            // firebaseDatabase.setPostIsFinished(e.target.parentElement.data.pid);
+            e.target.parentElement.remove();
+
+        }
 
     }
- //    function querystring(e){
- //      //console.log("button working");
- // //      var url = 'https://maps.googleapis.com/maps/api/directions/json?origin=' + start.value + '&destination=' + destination.value;
- // // var finalurl = jsonp + encodeURIComponent(url);
- // var url= "http://localhost:8080/index.html";
- //
- //  var pid= e.target.parentElement.data.pid;
- //  var finalurl= url+ "?" + pid;
- //  console.log(finalurl);
- //  var myWindow = window.open(finalurl, "_self");
- //window.open(finalurl);
+    //    function querystring(e){
+    //      //console.log("button working");
+    // //      var url = 'https://maps.googleapis.com/maps/api/directions/json?origin=' + start.value + '&destination=' + destination.value;
+    // // var finalurl = jsonp + encodeURIComponent(url);
+    // var url= "http://localhost:8080/index.html";
+    //
+    //  var pid= e.target.parentElement.data.pid;
+    //  var finalurl= url+ "?" + pid;
+    //  console.log(finalurl);
+    //  var myWindow = window.open(finalurl, "_self");
+    //window.open(finalurl);
 
-  // }
+    // }
 
     // function test(e){
     //   console.log(e.target.parentElement.data.body);
@@ -188,11 +178,51 @@ function runApp(user) {
             if (post) { //if post data is not null,
                 //open modal
                 var testTitle = document.createElement('h4');
-                    testTitle.innerHTML = post.title;
+                testTitle.innerHTML = post.title;
                 var testBody = document.createElement('h4');
-                    testBody.innerHTML = post.body;
+                testBody.innerHTML = post.body;
                 new Modal(testBody);
             }
         });
     }
+    document.querySelector('#newest').addEventListener('click', newer);
+    document.querySelector('#oldest').addEventListener('click', oldest);
+    document.querySelector('#uid').addEventListener('click', onlyusers);
+
+    function newer(e) {
+      document.querySelector('#posts-list').children;
+      console.log("newer")
+        // var arr = [];
+        //sort the dates of each post from oldest to newest
+        // for (var i = 0; i < postList.children.length; i++) {
+        //   console.log(document.querySelector('#posts-list').append(document.querySelector('posts.list').find('listitem').get().reverse()));
+        //     $('ul').append($('ul').find('li').get().reverse());
+        //     arr.push(postList.children[i].data.date_created);
+        //     console.log(arr.sort());
+        // }
+        // for (var j = arr.length; j >= 0; j--) {
+        //     //need to say if the firebase data at date_creates===arr[j]
+        //     //make a new list item. Will also need to remove all existing listitems
+        //     if (postList.children[i].data.date_created === arr[j]) {
+        //         console.log("is this function working");
+        //         appendToList();
+        //     }
+        }
+
+
+
+
+function oldest() {
+    console.log("old");
+}
+
+function onlyusers() {
+    console.log("uid");
+    for(var i=0; i<postList.children.length; i++){
+    console.log(postList.children[i].data.uid);
+    if (postList.children[i].data.uid !== user.uid){
+      postList.children[i].style.display="none";
+    }
+}
+}
 }

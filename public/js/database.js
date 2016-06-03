@@ -99,7 +99,7 @@ FirebaseDatabase.prototype.createNewPost = function (title, body) {
         body: body, //body of post from second parameter
         isAnonymous: true, //default anonymous to true
         isFinished: false, //default isFinished to false
-        date_created: Date()
+        date_created: Date.now()
     };
 
 
