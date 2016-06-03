@@ -22,11 +22,22 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function runApp(user) {
+  document.querySelector('#newest').addEventListener('click', newer);
+  document.querySelector('#oldest').addEventListener('click', oldest);
+  document.querySelector('#uid').addEventListener('click', onlyusers);
+      //main app code here
+  function newer() {
+    console.log("new");
+  }
+  function oldest() {
+    console.log("old");
+  }
+  function onlyusers() {
+    console.log("uid");
+  }
     //console.log("user: ", user);
     var firebaseDatabase = new FirebaseDatabase(user.uid);
 
-
-    //main app code here
 
 
 
@@ -71,7 +82,7 @@ function runApp(user) {
         var CommentButton=document.createElement('button');
         CommentButton.innerHTML="Comment";
         CommentButton.style.marginLeft="40px";
-        CommentButton.addEventListener('click', test);
+        //CommentButton.addEventListener('click', querystring);
          //CommentButton.addEventListner('click', comment());
 
         listitem.appendChild(rmv);
@@ -142,19 +153,19 @@ function runApp(user) {
       }
 
     }
-    function test(e){
-      //console.log("button working");
- //      var url = 'https://maps.googleapis.com/maps/api/directions/json?origin=' + start.value + '&destination=' + destination.value;
- // var finalurl = jsonp + encodeURIComponent(url);
- var url= "http://localhost:8080/index.html";
-
-  var pid= e.target.parentElement.data.pid;
-  var finalurl= url+ "?" + pid;
-  console.log(finalurl);
-  var myWindow = window.open(finalurl, "_self");
+ //    function querystring(e){
+ //      //console.log("button working");
+ // //      var url = 'https://maps.googleapis.com/maps/api/directions/json?origin=' + start.value + '&destination=' + destination.value;
+ // // var finalurl = jsonp + encodeURIComponent(url);
+ // var url= "http://localhost:8080/index.html";
+ //
+ //  var pid= e.target.parentElement.data.pid;
+ //  var finalurl= url+ "?" + pid;
+ //  console.log(finalurl);
+ //  var myWindow = window.open(finalurl, "_self");
  //window.open(finalurl);
 
-  }
+  // }
 
     // function test(e){
     //   console.log(e.target.parentElement.data.body);
