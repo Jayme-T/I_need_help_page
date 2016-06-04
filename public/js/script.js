@@ -73,7 +73,7 @@ function runApp(user) {
         var CommentButton = document.createElement('button');
         CommentButton.innerHTML = "Comment";
         CommentButton.style.marginLeft = "40px";
-        //CommentButton.addEventListener('click', querystring);
+        CommentButton.addEventListener('click', querystring);
         //CommentButton.addEventListner('click', comment());
 
         listitem.appendChild(rmv);
@@ -143,19 +143,19 @@ function runApp(user) {
         }
 
     }
-    //    function querystring(e){
-    //      //console.log("button working");
-    // //      var url = 'https://maps.googleapis.com/maps/api/directions/json?origin=' + start.value + '&destination=' + destination.value;
-    // // var finalurl = jsonp + encodeURIComponent(url);
-    // var url= "http://localhost:8080/index.html";
-    //
-    //  var pid= e.target.parentElement.data.pid;
-    //  var finalurl= url+ "?" + pid;
-    //  console.log(finalurl);
-    //  var myWindow = window.open(finalurl, "_self");
+       function querystring(e){
+         //console.log("button working");
+    //      var url = 'https://maps.googleapis.com/maps/api/directions/json?origin=' + start.value + '&destination=' + destination.value;
+    // var finalurl = jsonp + encodeURIComponent(url);
+    var url= "http://localhost:8080/question.html";
+
+     var pid= e.target.parentElement.data.pid;
+     var finalurl= url+ "?" + pid;
+     console.log(finalurl);
+     var myWindow = window.open(finalurl, "_self");
     //window.open(finalurl);
 
-    // }
+    }
 
     // function test(e){
     //   console.log(e.target.parentElement.data.body);
@@ -213,13 +213,17 @@ function runApp(user) {
 
 
 function oldest() {
-    console.log("old");
+
+      for(var i=0; i<postList.children.length; i++){
+        postList.children[i].style.display="block";
+    }
+
 }
 
 function onlyusers() {
     console.log("uid");
     for(var i=0; i<postList.children.length; i++){
-    console.log(postList.children[i].data.uid);
+    //console.log(postList.children[i].data.uid);
     if (postList.children[i].data.uid !== user.uid){
       postList.children[i].style.display="none";
     }
