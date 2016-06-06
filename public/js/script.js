@@ -35,9 +35,13 @@ function runApp(user) {
         var title = document.getElementById("title");
         var body = document.querySelector('textarea');
         firebaseDatabase.createNewPost(title.value, body.value);
+        document.getElementById("title").value="";
+        document.querySelector('textarea').value="";
+        window.scrollTo(1500, 1530);
+
     });
     var postList = document.getElementById('posts-list');
-    console.log(postList);
+    //console.log(postList);
 
     function appendToList(item) {
 
