@@ -21,9 +21,22 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
+<<<<<<< HEAD
 function runApp(user) {
 var windowPid = window.location.search.split("?");
 //the below console log it the actual PID that will be found
 //in the database and we need to post the body associated with this pid
 console.log(windowPid[1].toString());
+=======
+function runApp(user){
+    var firebaseDatabase = new FirebaseDatabase(user.uid);
+    
+    var pid = window.location.search.substring(1, window.location.search.length);
+    console.log("pid: ", pid);
+    firebaseDatabase.fetchSinglePost(pid, function(data) {
+        console.log("post data: ", data);
+    });
+
+
+>>>>>>> efacdf78e841f18f4a71406bf7e58ebf313c1444
 }

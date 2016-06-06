@@ -189,6 +189,9 @@ function runApp(user) {
             }
         });
     }
+
+
+
     document.querySelector('#newest').addEventListener('click', newer);
     document.querySelector('#oldest').addEventListener('click', oldest);
     document.querySelector('#uid').addEventListener('click', onlyusers);
