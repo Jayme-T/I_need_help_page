@@ -36,7 +36,10 @@ function runApp(user){
     firebaseDatabase.fetchSinglePost(pid, function(data) {
         console.log("post data: ", data);
     });
+<<<<<<< HEAD
 
+=======
+>>>>>>> efacdf78e841f18f4a71406bf7e58ebf313c1444
 
 >>>>>>> efacdf78e841f18f4a71406bf7e58ebf313c1444
 }
