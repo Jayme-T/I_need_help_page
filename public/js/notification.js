@@ -6,10 +6,11 @@ var Notification = function(type, message, time) {
     this.portal = false;
     this.removeAfter = 3000; //remove after 3 seconds
 
-    // if (time !== "max") {
-    //     this.time = (!time) ? 3000 : time;
-    // } else this.time = 600000; //10 minutes
-    this.time = 600000;
+    if (time !== "max") {
+        this.time = (!time) ? 3000 : time;
+    } else {
+        this.time = 600000; //10 minutes
+    }
 
     //run
     this.show();
@@ -27,7 +28,9 @@ Notification.prototype.show = function () {
             //ensures that notification list is created first
             //if not, calls render as callback after appending list ul to body
             this.createList(this.render.bind(this)); //bind to attach this portal to render method
-        } else this.render();
+        } else {
+            this.render();
+        }
     }
 };
 
