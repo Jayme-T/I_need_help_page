@@ -22,7 +22,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 function runApp(user){
-
+    var firebaseDatabase = new FirebaseDatabase(user.uid);
+    
+    var pid = window.location.search.substring(1, window.location.search.length);
+    console.log("pid: ", pid);
+    firebaseDatabase.fetchSinglePost(pid, function(data) {
+        console.log("post data: ", data);
+    });
 
 
 }
