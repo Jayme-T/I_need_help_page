@@ -10,7 +10,6 @@ $error-color: rgba(238, 83, 80, $opaque);
    left: 0;
    z-index: 10000;
    .notification {
-      margin-top: 2px;
       height: 50px;
       position: relative;
       transition: height 450ms ease-in-out;

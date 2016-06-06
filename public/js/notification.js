@@ -6,9 +6,10 @@ var Notification = function(type, message, time) {
     this.portal = false;
     this.removeAfter = 3000; //remove after 3 seconds
 
-    if (time !== "max") {
-        this.time = (!time) ? 3000 : time;
-    } else this.time = 600000; //10 minutes
+    // if (time !== "max") {
+    //     this.time = (!time) ? 3000 : time;
+    // } else this.time = 600000; //10 minutes
+    this.time = 600000;
 
     //run
     this.show();
