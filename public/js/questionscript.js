@@ -39,6 +39,9 @@ function runApp(user) {
 
         firebaseDatabase.createNewComment(POST_ID, info.value);
 
+        document.querySelector('textarea').value="";
+        window.scrollTo(1500, 1530);
+
     });
 
     console.log("pid: ", POST_ID);
@@ -78,7 +81,7 @@ function runApp(user) {
 
 
     for (var keys in data) {
-        console.log(keys);
+        //console.log(keys);
         console.log(data[keys]["body"]);
     }
 
