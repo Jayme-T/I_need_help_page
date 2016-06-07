@@ -40,6 +40,7 @@ body {
     }
 }
 $btn-color: rgb(84, 150, 179);
+
 .user-settings-inner {
     input {
         height: 50px;
@@ -66,5 +67,59 @@ $btn-color: rgb(84, 150, 179);
     }
     .section-title {
         text-align: center;
+    }
+}
+
+#posts-list {
+    list-style: none;
+    padding: 0;
+    .list-item {
+        width: 75%;
+        margin-left: 12.5%;
+        border: solid 1px;
+        padding: 15px;
+        display: flex;
+        position: relative;
+        .item-text-box {
+            float: left;
+            width: 90%;
+            .item-text {
+                margin: 0;
+            }
+        }
+        .menu-box {
+            height: auto;
+            position: absolute;
+            right: 5%;
+            top: 30%;
+            .menu-box-icon{
+                font-size: 30px;
+                transition: all 100ms ease-in-out;
+                &:hover {
+                    transform: scale(1.25);
+                    transition: all 100ms ease-in-out;
+                }
+            }
+        }
+    }
+    &.loading {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.post-menu {
+    .btn {
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+        border: solid 1px rgba(100, 100, 100, 0.6);
+        cursor: pointer;
+        background-color: $btn-color;
+        font-size: 16px;
+        color: white;
+        &:hover {
+            background-color: darken($btn-color, 15%);
+        }
     }
 }

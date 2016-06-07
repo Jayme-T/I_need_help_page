@@ -1,4 +1,5 @@
 'use strict';
+var firebase = firebase;
 
 //initialize
 var FirebaseDatabase = function(uid) {
@@ -112,11 +113,10 @@ FirebaseDatabase.prototype.createNewPost = function (title, body) {
 FirebaseDatabase.prototype.setPostIsFinished = function (pid) {
     if (!pid) {
         throw new Error('Post ID (first argument) is not defined');
-        return;
     }
     var fin = {
         isFinished: true
-    }
+    };
     //update the post at the pid in the 'posts' table
     firebase.database().ref('/posts/' + pid).update(fin);
     //update the post at the pid in the 'user-posts' table
@@ -126,7 +126,6 @@ FirebaseDatabase.prototype.setPostIsFinished = function (pid) {
 FirebaseDatabase.prototype.deletePost = function (pid) {
     if (!pid) {
         throw new Error('Post ID (first argument) is not defined');
-        return;
     }
 
     /**FIXME: establish checks for correct pid*/
@@ -137,3 +136,6 @@ FirebaseDatabase.prototype.deletePost = function (pid) {
     //remove the post with this pid in the 'user-posts' table
     firebase.database().ref('/user-posts/' + this.uid + '/' + pid).set(null);
 };
+
+
+//comments

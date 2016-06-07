@@ -38,5 +38,10 @@ function runApp(user){
 
         //document.querySelector('#comments')=
     });
+    firebaseDatabase.fetchAllComments(pid, function(data) {
+        
+    });
+
+
 
 }
