@@ -89,7 +89,7 @@ FirebaseDatabase.prototype.onPostUpdated = function (callback) {
 */
 FirebaseDatabase.prototype.createNewPost = function (title, body) {
     // Create a key for a new post
-    var uniquePostId = firebase.database().ref().child('posts').push().key;
+    var uniquePostId = "P_"+firebase.database().ref().child('posts').push().key;
     // console.log("uniquePostId: ", uniquePostId);
 
     // Data to send
@@ -139,3 +139,34 @@ FirebaseDatabase.prototype.deletePost = function (pid) {
 
 
 //comments
+FirebaseDatabase.prototype.createNewComment = function (pid, body) {
+    console.log("pid: ", pid);
+    console.log("body: ", body);
+    var uniqueCommentId = "C_"+firebase.database().ref().child('posts/'+pid).push().key;
+    // Data to send
+    var commentData = {
+        uid: this.uid, //user id
+        pid: pid, //post id from first parameter
+        cid: uniqueCommentId,
+        body: body //body of post from second parameter
+        // date_created: Date()
+    };
+
+    firebase.database().ref('/comments/'+pid + '/' + uniqueCommentId).set(commentData);
+};
+
+
+FirebaseDatabase.prototype.fetchAllComments = function (pid, callback) {
+    firebase.database().ref('comments/'+pid).once('value', function(snapshot) {
+        return callback(snapshot.val());
+    });
+};
+
+FirebaseDatabase.prototype.deleteComment = function (pid, cid) {
+
+    /**FIXME: establish checks for correct pid*/
+    /**FIXME: add database validation rules for who can delete a comment*/
+
+    //remove the post with this pid in the 'posts' table
+    firebase.database().ref('/comments/' + pid + '/' + cid).set(null);
+};

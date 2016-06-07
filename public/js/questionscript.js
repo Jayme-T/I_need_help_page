@@ -25,9 +25,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 function runApp(user){
     var firebaseDatabase = new FirebaseDatabase(user.uid);
 
-    var pid = window.location.search.substring(1, window.location.search.length);
-    console.log("pid: ", pid);
-    firebaseDatabase.fetchSinglePost(pid, function(data) {
+    var POST_ID = window.location.search.substring(1, window.location.search.length);
+
+
+    console.log("pid: ", POST_ID);
+    firebaseDatabase.fetchSinglePost(POST_ID, function(data) {
         console.log("post data: ", data);
         document.querySelector('#title').innerHTML=data.title;
         document.querySelector('#body').innerHTML=data.body;
@@ -38,10 +40,13 @@ function runApp(user){
 
         //document.querySelector('#comments')=
     });
-    firebaseDatabase.fetchAllComments(pid, function(data) {
-        
+
+    var _mock_comment = "Wow, that's a helluva problem you got! Good luck!";
+    firebaseDatabase.createNewComment(POST_ID, _mock_comment);
+
+
+    firebaseDatabase.fetchAllComments(POST_ID, function(data) {
+        console.log("comments from post "+POST_ID+": ", data);
     });
-
-
 
 }
