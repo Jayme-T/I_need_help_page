@@ -140,8 +140,8 @@ FirebaseDatabase.prototype.deletePost = function (pid) {
 
 //comments
 FirebaseDatabase.prototype.createNewComment = function (pid, body) {
-    console.log("pid: ", pid);
-    console.log("body: ", body);
+    // console.log("pid: ", pid);
+    // console.log("body: ", body);
     var uniqueCommentId = "C_"+firebase.database().ref().child('posts/'+pid).push().key;
     // Data to send
     var commentData = {

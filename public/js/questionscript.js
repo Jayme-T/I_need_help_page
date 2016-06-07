@@ -45,10 +45,17 @@ function runApp(user){
         //document.querySelector('#comments')=
     });
 
-    var _mock_comment = "Wow, that's a helluva problem you got! Good luck!";
-    firebaseDatabase.createNewComment(POST_ID, _mock_comment);
 
 
+    // var commentBody = "Wow, that's a helluva problem you got! Good luck!";
+
+    //this method creates a comment, parameters are the post id
+    //and the comment body as a string
+    // firebaseDatabase.createNewComment(POST_ID, commentBody);
+
+    //this will return an array of all comments of a specific post id
+    //parameters are the post id, and a callback function to
+    //run once comments have been fetched
     firebaseDatabase.fetchAllComments(POST_ID, function(data) {
         console.log("comments from post "+POST_ID+": ", data);
     });
