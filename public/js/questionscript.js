@@ -1,5 +1,9 @@
 'use strict';
 
+var firebase = firebase;
+var FirebaseDatabase = FirebaseDatabase;
+var Modal = Modal;
+
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyB-Yv2W_XARpu5sx1l9BDXaQ2SNTmIB0tc",
