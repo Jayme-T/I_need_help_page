@@ -27,7 +27,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function runApp(user) {
 
-
     //console.log("user: ", user);
     var firebaseDatabase = new FirebaseDatabase(user.uid);
 
@@ -37,13 +36,15 @@ function runApp(user) {
         var title = document.getElementById("title");
         var body = document.querySelector('textarea');
         firebaseDatabase.createNewPost(title.value, body.value);
+
+
         document.getElementById("title").value="";
         document.querySelector('textarea').value="";
         window.scrollTo(1500, 1530);
     });
     var postList = document.getElementById('posts-list');
-    console.log("postList.children: ", postList.children.length);
-    //console.log(postList);
+    //console.log("postList.children: ", postList.children.length);
+    console.log(postList);
 
     function appendToList(item) {
         //remove loader from list
@@ -288,4 +289,10 @@ function runApp(user) {
         elem.classList.remove('fa-3x');
         elem.classList.remove('fa-fw');
     }
+  
+
+    document.getElementById('seeQuestions').addEventListener('click', function(){
+      console.log("testing click");
+      document.getElementById('allQuestionInfo').style.display="block";
+    });
 }

@@ -763,3 +763,16 @@ body {
 .post-menu .btn:hover {
   background-color: #396b81;
 }
+
+#title{
+  text-align:center;
+  color:rgb(102, 23, 95);
+}
+#body{
+  text-align:center;
+  font-weight:bold;
+}
+#comments{
+  margin-top:75px;
+  text-align:center;
+}
