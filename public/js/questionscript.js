@@ -54,6 +54,7 @@ function runApp(user){
     // firebaseDatabase.createNewComment(POST_ID, commentBody);
 
     //this will return an array of all comments of a specific post id
+        //or null if no comments
     //parameters are the post id, and a callback function to
     //run once comments have been fetched
     firebaseDatabase.fetchAllComments(POST_ID, function(data) {
