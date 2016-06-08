@@ -26,17 +26,28 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 
-function runApp(user){
-    var firebaseDatabase = new FirebaseDatabase(user.uid);
+function runApp(user) {
 
+    var firebaseDatabase = new FirebaseDatabase(user.uid);
     var POST_ID = window.location.search.substring(1, window.location.search.length);
 
+    var button = document.getElementById('press');
+    button.addEventListener('click', function() {
+
+        var info = document.getElementById('textarea');
+
+        firebaseDatabase.createNewComment(POST_ID, info.value);
+
+        document.querySelector('textarea').value="";
+        window.scrollTo(1500, 1530);
+
+    });
 
     console.log("pid: ", POST_ID);
     firebaseDatabase.fetchSinglePost(POST_ID, function(data) {
         console.log("post data: ", data);
-        document.querySelector('#title').innerHTML=data.title;
-        document.querySelector('#body').innerHTML=data.body;
+        document.querySelector('#title').innerHTML = data.title;
+        document.querySelector('#body').innerHTML = data.body;
         //should we create a comments object the key is the pid and then
         //the value is an array of comments?
         //then we could set or comments div equal to each element of the array
@@ -53,12 +64,22 @@ function runApp(user){
     // // and the comment body as a string
     // firebaseDatabase.createNewComment(POST_ID, commentBody);
 
-    // //this will return an array of all comments of a specific post id
-    //     //or null if no comments
-    // //parameters are the post id, and a callback function to
-    // //run once comments have been fetched
-    // firebaseDatabase.fetchAllComments(POST_ID, function(data) {
-    //     console.log("comments from post "+POST_ID+": ", data);
-    // });
+
+    //this will return an array of all comments of a specific post id
+    //or null if no comments
+    //parameters are the post id, and a callback function to
+    //run once comments have been fetched
+    firebaseDatabase.fetchAllComments(POST_ID, function(data) {
+        console.log("comments from post " + POST_ID + ": ", data);
+
+        for (var keys in data) {
+            //console.log(keys);
+            console.log("data: ", data[keys]["body"]);
+        }
+
+    });
+
+
+    //firebaseDatabase.fetchSinglePost
 
 }

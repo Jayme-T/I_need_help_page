@@ -11,9 +11,12 @@
 
 <body>
     <div class="nav-bar">
-
         <div id="user-icon" class="user-icon">
             <i class="settings fa fa-user"></i>
+        </div>
+        <div class="menu">
+            <h3 class="item" id="create-new-post-button">New Post</h3>
+            <h3 class="item" id="see-all-posts-button">All Posts</h3>
         </div>
     </div>
     <div id="form">
@@ -31,16 +34,19 @@
           </div>
         <!-- </form> -->
     </div>
+    <button id="seeQuestions"> See questions </button>
+  <div id="allQuestionInfo" style="display: none">
     <div id="questionStyle">
-      <p> You can choose how you would like questions sorted </p>
-      <button id="newest" disabled> all- newest first </button>
-      <button id="oldest"> all- oldest first </button>
+      <p> How would you like them sorted</p>
+      <button id="newest" disabled> newest first </button>
+      <button id="oldest"> oldest first </button>
       <button id="uid"> your questions </button>
       <button disabled> topic </button>
     </div>
     <div class="posts">
         <ul id="posts-list" class="loading fa fa-spinner fa-pulse fa-3x fa-fw"></ul>
     </div>
+  </div>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>

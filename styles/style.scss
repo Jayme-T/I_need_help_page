@@ -38,6 +38,23 @@ body {
         padding: 15px;
         font-size: 25px;
     }
+    .menu {
+        display: inline-block;
+        padding: .8em;
+        .item {
+            float: left;
+            margin: 0;
+            margin-left: 25px;
+            transition: all 200ms ease-in-out;
+            cursor: pointer;
+            border: solid 1px;
+            padding: 0.3em;
+            &:hover {
+                transition: all 200ms ease-in-out;
+                background-color: darken(#dadada, 20%);
+            }
+        }
+    }
 }
 $btn-color: rgb(84, 150, 179);
 

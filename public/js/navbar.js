@@ -1,14 +1,22 @@
 'use strict';
 
+var Modal = Modal;
+var firebase = firebase;
+
 
 //user settings
 var userIcon = document.getElementById('user-icon');
     userIcon.addEventListener('click', openUserSettings);
 
+var createNewPostButton = document.getElementById('create-new-post-button');
+    createNewPostButton.addEventListener('click', openNewPost);
+var seeAllPostsButton = document.getElementById('see-all-posts-button');
+    seeAllPostsButton.addEventListener('click', openSeeAllPosts);
+
 function openUserSettings(e) {
     var currentUser = firebase.auth().currentUser;
     if (!currentUser) {
-        console.log("NO USER!")
+        console.log("NO USER!");
         showNoUserSettings(e);
         return;
     }
@@ -23,7 +31,7 @@ function openUserSettings(e) {
         nameLabel.innerHTML = "Display name:";
     var name = document.createElement('input');
         name.type = 'text';
-        console.log("currentUser: ", currentUser.displayName)
+        console.log("currentUser: ", currentUser.displayName);
         if (!currentUser.displayName) {
             name.placeholder = "What's yo name?";
         } else {
@@ -35,7 +43,7 @@ function openUserSettings(e) {
         saveBtn.innerHTML = "Save";
         saveBtn.addEventListener('click', function() {
             loadingSaveButton();
-            if (name.value == "" || !name.value) {
+            if (name.value === "" || !name.value) {
                 new Notification('error', 'Name cannot be blank', 2000);
                 return;
             }
@@ -80,7 +88,7 @@ function openUserSettings(e) {
         logout.addEventListener('click', logoutUser);
 
     var lineBreak = document.createElement('hr');
-    var lineBreakTwo = lineBreak.cloneNode();
+    // var lineBreakTwo = lineBreak.cloneNode();
 
     settings.appendChild(settingsTitle);
     settings.appendChild(nameLabel);
@@ -105,12 +113,12 @@ function logoutUser() {
         setTimeout(function() {
             window.location.assign("/auth/login.html?u=lo");
         }, 3100);
-    }, function(error) {
+    }, function() {
         new Notification('error', 'There was an error logging out. Please try again.', 3000);
     });
 }
 
-function showNoUserSettings(e) {
+function showNoUserSettings() {
     var settings = document.createElement('div');
         settings.className = "user-settings-inner";
     var title = document.createElement('h3');
@@ -136,6 +144,16 @@ function showNoUserSettings(e) {
     settings.appendChild(register);
     new Modal(settings);
 }
+
+function openNewPost() {
+    // routeTo('')
+}
+
+function openSeeAllPosts() {
+
+}
+
+
 
 
 function routeTo(path) {
