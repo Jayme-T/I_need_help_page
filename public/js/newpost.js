@@ -48,21 +48,21 @@ function runApp(user) {
     });
 
 
-    var time = setTimeout(function() {}, 300000);
-    var connectedRef = firebase.database().ref(".info/connected");
-    connectedRef.on("value", function(snap) {
-        console.log("snap: ", snap.val());
-        clearTimeout(time);
-        if (snap.val() === true) {
-            time = setTimeout(function() {
-                new Notification('success', 'You are now connected to the internet');
-            }, 1000);
-        } else {
-            time = setTimeout(function() {
-                new Notification('error', 'You have lost internet connection, but fear not, we will save your data and sync it when you come back online!');
-            }, 1000);
-        }
-    });
+    // var time = setTimeout(function() {}, 300000);
+    // var connectedRef = firebase.database().ref(".info/connected");
+    // connectedRef.on("value", function(snap) {
+    //     console.log("snap: ", snap.val());
+    //     clearTimeout(time);
+    //     if (snap.val() === true) {
+    //         time = setTimeout(function() {
+    //             new Notification('success', 'You are now connected to the internet');
+    //         }, 1000);
+    //     } else {
+    //         time = setTimeout(function() {
+    //             new Notification('error', 'You have lost internet connection, but fear not, we will save your data and sync it when you come back online!');
+    //         }, 1000);
+    //     }
+    // });
 
 
 

@@ -170,6 +170,7 @@ $btn-color: rgb(84, 150, 179);
 }
 
 
+
 .form-title {
     width: 50%;
     min-width: 300px;
@@ -202,4 +203,22 @@ $btn-color: rgb(84, 150, 179);
         width: 100%;
         height: 200px;
     }
+}
+
+
+#textarea {
+    margin-top: 30px;
+    width: 400px;
+    height: 200px;
+    margin-left: 50%;
+    left: -200px;
+    position: relative;
+}
+#press {
+    width: 100px;
+    padding: 15px;
+    // height: 35px;
+    margin-left: 50%;
+    left: -50px;
+    position: relative;
 }

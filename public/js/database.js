@@ -41,6 +41,15 @@ FirebaseDatabase.prototype.onPostAdded = function (callback) {
     });
 };
 
+/**FIXME!!! MOVE ME ELSEWHERE*/
+FirebaseDatabase.prototype.onCommentAdded = function (pid, callback) {
+    firebase.database().ref('comments/'+pid).on('child_added', function(snapshot) {
+        // console.log("snapshot: ", snapshot.val());
+        return callback(snapshot.val());
+    });
+};
+
+
 
 
 /** onPostRemoved

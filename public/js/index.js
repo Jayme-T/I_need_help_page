@@ -58,6 +58,22 @@ function runApp(user) {
         var listitem = document.createElement('li');
         listitem.className = "list-item";
         listitem.data = item; //necessary! to hold data
+        listitem.addEventListener('click', function(e) {
+            
+            if (e.target.classList.contains('menu-box-icon')) {
+                return;
+            }
+            var box = document.createElement('div');
+                box.className = "box";
+            var title = document.createElement('h4');
+                title.innerHTML = this.data.title;
+            var body = document.createElement('p');
+                body.innerHTML = this.data.body;
+            box.appendChild(title);
+            box.appendChild(body);
+
+            new Modal(box);
+        });
 
         var itemTextBox = document.createElement('div');
             itemTextBox.className = "item-text-box";

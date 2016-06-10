@@ -31,6 +31,8 @@ function runApp(user) {
     var firebaseDatabase = new FirebaseDatabase(user.uid);
     var POST_ID = window.location.search.substring(1, window.location.search.length);
 
+    var commentsList = document.getElementById('posts-list');
+
     var button = document.getElementById('press');
     button.addEventListener('click', function() {
 
@@ -62,31 +64,82 @@ function runApp(user) {
 
         //document.querySelector('#comments')=
     });
-
+    //
     firebaseDatabase.fetchAllComments(POST_ID, function(data) {
-        //console.log("comments from post " + POST_ID + ": ", data);
-
-        //for (var keys in data) {
-            //console.log(keys);
-          //  console.log("data: ", data[keys]["body"]);
-          var keyArray=Object.keys(data);
-          console.log(keyArray);
-          for (var key in data){
-            keyArray.push=(key);
-            console.log(keyArray);
-          }
-          for (var i=0; i<keyArray.length; i++){
-          var p = document.createElement("p");
-          var node = document.createTextNode(data[keyArray[i]]["body"]);
-          // p.className="paragraph" + i;
-          p.appendChild(node);
-          document.body.appendChild(p);
-        }
+        if (!data) {
+            removeLoadingSpinner(commentsList);
         }
 
-    );
+        // //console.log("comments from post " + POST_ID + ": ", data);
+        //
+        // //for (var keys in data) {
+        //     //console.log(keys);
+        //   //  console.log("data: ", data[keys]["body"]);
+        //   var keyArray=Object.keys(data);
+        //   console.log(keyArray);
+        //   for (var key in data){
+        //     keyArray.push=(key);
+        //     console.log(keyArray);
+        //   }
+        //   for (var i=0; i<keyArray.length; i++){
+        //   var p = document.createElement("p");
+        //   var node = document.createTextNode(data[keyArray[i]]["body"]);
+        //   // p.className="paragraph" + i;
+        //   p.appendChild(node);
+        //   document.body.appendChild(p);
+        // }
+        // }
+
+    });
 
 
-    //firebaseDatabase.fetchSinglePost
+// <div class="posts">
+//     <ul id="posts-list" class="loading fa fa-spinner fa-pulse fa-3x fa-fw"></ul>
+// </div>
+
+    // var count = 0;
+    function addToList(item) {
+
+        removeLoadingSpinner(commentsList);
+
+        var listItem = document.createElement('li');
+            listItem.className ="list-item";
+            listItem.data = item;
+
+            var body = document.createElement("p");
+                body.className = "item-text";
+                body.innerHTML = item.body;
+            // var node = document.createTextNode(item.body);
+            listItem.appendChild(body);
+
+        commentsList.appendChild(listItem);
+
+
+        // var listitem = document.createElement('li');
+        // listitem.className = "list-item";
+        // listitem.data = item; //necessary! to hold data
+        //
+        // var itemTextBox = document.createElement('div');
+        //     itemTextBox.className = "item-text-box";
+        //     var itemTitle = document.createElement('h3');
+        //     itemTitle.className = 'item-text';
+        //     itemTitle.innerHTML = item.title;
+        // itemTextBox.appendChild(itemTitle);
+
+    }
+
+    firebaseDatabase.onCommentAdded(POST_ID, addToList);
+
+
+    function removeLoadingSpinner(elem) {
+        // loading fa fa-spinner fa-pulse fa-3x fa-fw
+        elem.classList.remove('loading');
+        elem.classList.remove('fa');
+        elem.classList.remove('fa-spinner');
+        elem.classList.remove('fa-pulse');
+        elem.classList.remove('fa-3x');
+        elem.classList.remove('fa-fw');
+    }
+
 
 }
