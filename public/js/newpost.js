@@ -33,11 +33,18 @@ function runApp(user) {
     var subjectInput = document.getElementById('title');
     var bodyInput = document.getElementById('body');
     submitNewPost.addEventListener('click', function() {
+      if (document.getElementById('body').value !=='' && document.getElementById('title').value !=='') {
+        console.log("maybe?");
         firebaseDatabase.createNewPost(subjectInput.value, bodyInput.value, function() {
             //when done saving
-            console.log("here??")
+            //console.log("here??")
             window.location.assign("/index.html");
         });
+
+      }
+        else{
+          new Notification('error', 'Questions must have titles and bodies', 2000);
+        }
     });
 
 
