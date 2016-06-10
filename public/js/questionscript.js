@@ -45,9 +45,11 @@ function runApp(user) {
 
     console.log("pid: ", POST_ID);
     firebaseDatabase.fetchSinglePost(POST_ID, function(data) {
-        console.log("post data: ", data);
+      //  console.log("post data: ", data);
         document.querySelector('#title').innerHTML = data.title;
+        document.querySelector('#title').style.textAlign="center";
         document.querySelector('#body').innerHTML = data.body;
+        document.querySelector('#body').style.textAlign="center";
         //should we create a comments object the key is the pid and then
         //the value is an array of comments?
         //then we could set or comments div equal to each element of the array
@@ -56,28 +58,28 @@ function runApp(user) {
         //document.querySelector('#comments')=
     });
 
-
-
-    // var commentBody = "Wow, that's a helluva problem you got! Good luck!";
-
-    // // this method creates a comment, parameters are the post id
-    // // and the comment body as a string
-    // firebaseDatabase.createNewComment(POST_ID, commentBody);
-
-
-    //this will return an array of all comments of a specific post id
-    //or null if no comments
-    //parameters are the post id, and a callback function to
-    //run once comments have been fetched
     firebaseDatabase.fetchAllComments(POST_ID, function(data) {
-        console.log("comments from post " + POST_ID + ": ", data);
+        //console.log("comments from post " + POST_ID + ": ", data);
 
-        for (var keys in data) {
+        //for (var keys in data) {
             //console.log(keys);
-            console.log("data: ", data[keys]["body"]);
+          //  console.log("data: ", data[keys]["body"]);
+          var keyArray=Object.keys(data);
+          console.log(keyArray);
+          for (var key in data){
+            keyArray.push=(key);
+            console.log(keyArray);
+          }
+          for (var i=0; i<keyArray.length; i++){
+          var p = document.createElement("p");
+          var node = document.createTextNode(data[keyArray[i]]["body"]);
+          // p.className="paragraph" + i;
+          p.appendChild(node);
+          document.body.appendChild(p);
+        }
         }
 
-    });
+    );
 
 
     //firebaseDatabase.fetchSinglePost
