@@ -179,6 +179,14 @@ function runApp(user) {
     });
 
     function edit(e) {
+
+        /**FIXME: Need to update this method with new.html file*/
+
+        new Notification('success', 'Feature coming soon, but not to theaters near you...', 5000);
+        return;
+
+
+
         if (e.target.parentElement.data.uid !== user.uid) {
             new Notification('error', "can't edit a question you didn't write", 3000);
 
