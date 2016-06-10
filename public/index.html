@@ -19,34 +19,20 @@
             <h3 class="item" id="see-all-posts-button">All Posts</h3>
         </div>
     </div>
-    <div id="form">
-        <!-- <form> If you remove the form element wrapper,
-             the page won't reload on click of the button.
-             That way the question is simply added to the list, rather
-             than refreshing and adding, makes the pages smoother.
-        -->
-          <label> subject of question
-          <input id="title">
-          </label>
-          <div>
-            <textarea rows="10" cols="50"></textarea>
-            <input type="submit" id="press">
-          </div>
-        <!-- </form> -->
+
+    <!-- <button id="seeQuestions"> See questions </button> -->
+    <div id="allQuestionInfo">
+        <div id="questionStyle">
+            <p>How would you like them sorted</p>
+            <button id="newest" disabled> newest first </button>
+            <button id="oldest"> oldest first </button>
+            <button id="uid"> your questions </button>
+            <button disabled> topic </button>
+        </div>
+        <div class="posts">
+            <ul id="posts-list" class="loading fa fa-spinner fa-pulse fa-3x fa-fw"></ul>
+        </div>
     </div>
-    <button id="seeQuestions"> See questions </button>
-  <div id="allQuestionInfo" style="display: none">
-    <div id="questionStyle">
-      <p> How would you like them sorted</p>
-      <button id="newest" disabled> newest first </button>
-      <button id="oldest"> oldest first </button>
-      <button id="uid"> your questions </button>
-      <button disabled> topic </button>
-    </div>
-    <div class="posts">
-        <ul id="posts-list" class="loading fa fa-spinner fa-pulse fa-3x fa-fw"></ul>
-    </div>
-  </div>
 
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
@@ -57,7 +43,7 @@
     <script src="js/notification.js" charset="utf-8"></script>
     <script src="js/navbar.js" charset="utf-8"></script>
     <!-- Main script -->
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 
 </body>
 

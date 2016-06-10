@@ -87,7 +87,7 @@ FirebaseDatabase.prototype.onPostUpdated = function (callback) {
 * @param {string} title: Title of the post
 * @param {string} body: Body of the post
 */
-FirebaseDatabase.prototype.createNewPost = function (title, body) {
+FirebaseDatabase.prototype.createNewPost = function (title, body, callback) {
     // Create a key for a new post
     var uniquePostId = "P_"+firebase.database().ref().child('posts').push().key;
     // console.log("uniquePostId: ", uniquePostId);
@@ -105,9 +105,20 @@ FirebaseDatabase.prototype.createNewPost = function (title, body) {
 
 
     //save to "posts" table
-    firebase.database().ref('/posts/'+uniquePostId).set(postData);
+    var toPosts = firebase.database().ref('/posts/'+uniquePostId).set(postData);
+    console.log("posts.then: ", toPosts.then(function() {
+        var toUser = firebase.database().ref('/user-posts/'+this.uid+'/'+uniquePostId).set(postData);
+        toUser.then(function() {
+            // console.log("done with both");
+            if (typeof callback !== 'undefined') {
+                return callback();
+            }
+        });
+    }.bind(this)));
     //save to "user-posts" table
-    firebase.database().ref('/user-posts/'+this.uid+'/'+uniquePostId).set(postData);
+
+
+    // return callback();
 };
 
 FirebaseDatabase.prototype.setPostIsFinished = function (pid) {

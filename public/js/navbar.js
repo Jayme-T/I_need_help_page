@@ -146,11 +146,11 @@ function showNoUserSettings() {
 }
 
 function openNewPost() {
-    // routeTo('')
+    routeTo('/new.html');
 }
 
 function openSeeAllPosts() {
-
+    routeTo('/index.html');
 }
 
 

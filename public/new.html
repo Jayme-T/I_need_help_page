@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> The I need help with... page </title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div id="user-icon" class="user-icon">
+            <i class="settings fa fa-user"></i>
+        </div>
+        <div class="menu">
+            <h3 class="item" id="create-new-post-button">New Post</h3>
+            <h3 class="item" id="see-all-posts-button">All Posts</h3>
+        </div>
+    </div>
+    <div class="form">
+        <div class="form-title">
+            <label class="new-question title-label">Subject or Title</label>
+            <input id="title" type="text">
+        </div>
+        <div class="form-body">
+            <label class="new-question title-label">Question Body</label>
+            <textarea id="body" class="new-question-area"></textarea>
+        </div>
+        <div class="btn submit-form" id="submit-form">
+
+            <h4 class="text">Submit</h4>
+        </div>
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+        <!-- Our Firebase Database Methods -->
+        <script src="js/database.js" charset="utf-8"></script>
+        <!-- Modal, Notification & Navbar -->
+        <script src="js/modal.js" charset="utf-8"></script>
+        <script src="js/notification.js" charset="utf-8"></script>
+        <script src="js/navbar.js" charset="utf-8"></script>
+        <!-- Main script -->
+        <script type="text/javascript" src="js/newpost.js"></script>
+
+</body>
+
+</html>

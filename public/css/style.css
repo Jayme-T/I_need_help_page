@@ -648,6 +648,11 @@ body {
 }
 
 /* line 27, ../../styles/style.scss */
+.btn {
+  cursor: pointer;
+}
+
+/* line 31, ../../styles/style.scss */
 .nav-bar {
   height: 60px;
   background: aliceblue;
@@ -657,19 +662,19 @@ body {
   left: 0;
   position: relative;
 }
-/* line 35, ../../styles/style.scss */
+/* line 39, ../../styles/style.scss */
 .nav-bar .user-icon {
   position: absolute;
   right: 1%;
   padding: 15px;
   font-size: 25px;
 }
-/* line 41, ../../styles/style.scss */
+/* line 45, ../../styles/style.scss */
 .nav-bar .menu {
   display: inline-block;
   padding: .8em;
 }
-/* line 44, ../../styles/style.scss */
+/* line 48, ../../styles/style.scss */
 .nav-bar .menu .item {
   float: left;
   margin: 0;
@@ -680,26 +685,26 @@ body {
   border: solid 1px;
   padding: 0.3em;
 }
-/* line 52, ../../styles/style.scss */
+/* line 56, ../../styles/style.scss */
 .nav-bar .menu .item:hover {
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   background-color: #a7a7a7;
 }
 
-/* line 62, ../../styles/style.scss */
+/* line 66, ../../styles/style.scss */
 .user-settings-inner input {
   height: 50px;
   width: 100%;
   font-size: 20px;
   margin-bottom: 15px;
 }
-/* line 68, ../../styles/style.scss */
+/* line 72, ../../styles/style.scss */
 .user-settings-inner .input-label {
   margin: 0;
   margin-bottom: 5px;
 }
-/* line 72, ../../styles/style.scss */
+/* line 76, ../../styles/style.scss */
 .user-settings-inner .btn {
   padding: 15px;
   text-align: center;
@@ -710,21 +715,21 @@ body {
   font-size: 16px;
   color: white;
 }
-/* line 81, ../../styles/style.scss */
+/* line 85, ../../styles/style.scss */
 .user-settings-inner .btn:hover {
   background-color: #396b81;
 }
-/* line 85, ../../styles/style.scss */
+/* line 89, ../../styles/style.scss */
 .user-settings-inner .section-title {
   text-align: center;
 }
 
-/* line 90, ../../styles/style.scss */
+/* line 94, ../../styles/style.scss */
 #posts-list {
   list-style: none;
   padding: 0;
 }
-/* line 93, ../../styles/style.scss */
+/* line 97, ../../styles/style.scss */
 #posts-list .list-item {
   width: 75%;
   margin-left: 12.5%;
@@ -735,42 +740,42 @@ body {
   display: flex;
   position: relative;
 }
-/* line 100, ../../styles/style.scss */
+/* line 104, ../../styles/style.scss */
 #posts-list .list-item .item-text-box {
   float: left;
   width: 90%;
 }
-/* line 103, ../../styles/style.scss */
+/* line 107, ../../styles/style.scss */
 #posts-list .list-item .item-text-box .item-text {
   margin: 0;
 }
-/* line 107, ../../styles/style.scss */
+/* line 111, ../../styles/style.scss */
 #posts-list .list-item .menu-box {
   height: auto;
   position: absolute;
   right: 5%;
   top: 30%;
 }
-/* line 112, ../../styles/style.scss */
+/* line 116, ../../styles/style.scss */
 #posts-list .list-item .menu-box .menu-box-icon {
   font-size: 30px;
   -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
 }
-/* line 115, ../../styles/style.scss */
+/* line 119, ../../styles/style.scss */
 #posts-list .list-item .menu-box .menu-box-icon:hover {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
   -webkit-transition: all 100ms ease-in-out;
   transition: all 100ms ease-in-out;
 }
-/* line 122, ../../styles/style.scss */
+/* line 126, ../../styles/style.scss */
 #posts-list.loading {
   text-align: center;
   width: 100%;
 }
 
-/* line 129, ../../styles/style.scss */
+/* line 133, ../../styles/style.scss */
 .post-menu .btn {
   padding: 15px;
   text-align: center;
@@ -781,7 +786,66 @@ body {
   font-size: 16px;
   color: white;
 }
-/* line 138, ../../styles/style.scss */
+/* line 142, ../../styles/style.scss */
 .post-menu .btn:hover {
   background-color: #396b81;
+}
+
+/* line 150, ../../styles/style.scss */
+.form .btn {
+  width: 200px;
+  border: solid 1px;
+}
+
+/* line 157, ../../styles/style.scss */
+.btn.submit-form {
+  width: 400px;
+  border: solid 1px;
+  margin-left: 50%;
+  margin-top: 25px;
+  position: relative;
+  left: -200px;
+}
+/* line 164, ../../styles/style.scss */
+.btn.submit-form .text {
+  margin: 0;
+  font-size: 25px;
+  padding: 15px;
+  text-align: center;
+}
+
+/* line 173, ../../styles/style.scss */
+.form-title {
+  width: 50%;
+  min-width: 300px;
+  height: 100px;
+  margin-left: 25%;
+}
+/* line 178, ../../styles/style.scss */
+.form-title input#title {
+  width: 50%;
+  height: 35px;
+  float: left;
+  position: relative;
+  font-size: 18px;
+}
+
+/* line 188, ../../styles/style.scss */
+.title-label {
+  position: relative;
+  float: left;
+  width: 100%;
+  font-size: 20px;
+}
+
+/* line 196, ../../styles/style.scss */
+.form-body {
+  width: 50%;
+  min-width: 300px;
+  margin-left: 25%;
+}
+/* line 201, ../../styles/style.scss */
+.form-body .new-question-area {
+  width: 100%;
+  height: 200px;
 }
