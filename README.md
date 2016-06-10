@@ -22,6 +22,8 @@ the site. Please feel free to ask questions or make suggestions
 ####Using Gulp and Sass in this project**
 ***This project uses sass and gulp. Gulp is a javascript task runner that allows us to auto-compile our scss/sass stylesheets down to one single style.css file.***
 *You can read more about gulp here - http://gulpjs.com/*
+
+
 1. run `npm install -g gulp-cli`
     * This allows you to run gulp tasks from your command line
 1. Look in the public directory in the project. You will see a css folder, with a file called style.css. Delete that file. Yep, just delete it, it's ok
