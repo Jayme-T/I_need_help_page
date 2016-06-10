@@ -35,11 +35,16 @@ function runApp(user) {
     button.addEventListener('click', function() {
 
         var info = document.getElementById('textarea');
-
+        if (document.getElementById('textarea').value !==''){
         firebaseDatabase.createNewComment(POST_ID, info.value);
 
         document.querySelector('textarea').value="";
         window.scrollTo(1500, 1530);
+      }
+      else {
+        new Notification('error', "Please add a comment before hitting submit", 1500)
+    }
+
 
     });
 
