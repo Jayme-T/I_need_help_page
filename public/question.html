@@ -6,6 +6,15 @@
 <title> question </title>
 </head>
 <body>
+  <div class="nav-bar">
+      <div id="user-icon" class="user-icon">
+          <i class="settings fa fa-user"></i>
+      </div>
+      <div class="menu">
+          <h3 class="item" id="create-new-post-button">New Post</h3>
+          <h3 class="item" id="see-all-posts-button">All Posts</h3>
+      </div>
+  </div>
 <h1 id="title"></h1>
   <div id="body"> </div>
   <div id="comments">
@@ -20,7 +29,13 @@
   </div>
   <h2> Replies: </h2>
   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <!-- Our Firebase Database Methods -->
   <script src="js/database.js" charset="utf-8"></script>
+  <!-- Modal, Notification & Navbar -->
+  <script src="js/modal.js" charset="utf-8"></script>
+  <script src="js/notification.js" charset="utf-8"></script>
+  <script src="js/navbar.js" charset="utf-8"></script>
+  <!-- Main script -->
 <script type="text/javascript" src="js/questionscript.js">
 
 </script>

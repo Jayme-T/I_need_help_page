@@ -49,7 +49,7 @@ function runApp(user) {
         document.querySelector('#title').innerHTML = data.title;
         document.querySelector('#title').style.textAlign="center";
         document.querySelector('#body').innerHTML = data.body;
-        document.querySelector('#body').style.textAlign="center";
+        document.querySelector('#body').style.textAlign="center"
         //should we create a comments object the key is the pid and then
         //the value is an array of comments?
         //then we could set or comments div equal to each element of the array
