@@ -479,6 +479,7 @@ textarea {
       -webkit-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out;
       width: auto;
+      max-width: 50%;
       padding: 25px; }
 
 .modal-backdrop {
