@@ -3,23 +3,19 @@
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
-/* line 8, ../../styles/_reset.scss */
 html {
   font-family: sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the margin in all browsers (opinionated).
  */
-/* line 18, ../../styles/_reset.scss */
 body {
-  margin: 0;
-}
+  margin: 0; }
 
 /* HTML5 display definitions
    ========================================================================== */
@@ -28,7 +24,6 @@ body {
  * 1. Add the correct display in Edge, IE, and Firefox.
  * 2. Add the correct display in IE.
  */
-/* line 31, ../../styles/_reset.scss */
 article,
 aside,
 details,
@@ -42,46 +37,37 @@ nav,
 section,
 summary {
   /* 1 */
-  display: block;
-}
+  display: block; }
 
 /**
  * Add the correct display in IE 9-.
  */
-/* line 50, ../../styles/_reset.scss */
 audio,
 canvas,
 progress,
 video {
-  display: inline-block;
-}
+  display: inline-block; }
 
 /**
  * Add the correct display in iOS 4-7.
  */
-/* line 61, ../../styles/_reset.scss */
 audio:not([controls]) {
   display: none;
-  height: 0;
-}
+  height: 0; }
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
-/* line 70, ../../styles/_reset.scss */
 progress {
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /**
  * Add the correct display in IE 10-.
  * 1. Add the correct display in IE.
  */
-/* line 79, ../../styles/_reset.scss */
 template,
 [hidden] {
-  display: none;
-}
+  display: none; }
 
 /* Links
    ========================================================================== */
@@ -89,23 +75,19 @@ template,
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-/* line 92, ../../styles/_reset.scss */
 a {
   background-color: transparent;
   /* 1 */
   -webkit-text-decoration-skip: objects;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the outline on focused links when they are also active or hovered
  * in all browsers (opinionated).
  */
-/* line 102, ../../styles/_reset.scss */
 a:active,
 a:hover {
-  outline-width: 0;
-}
+  outline-width: 0; }
 
 /* Text-level semantics
    ========================================================================== */
@@ -113,109 +95,85 @@ a:hover {
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 115, ../../styles/_reset.scss */
 abbr[title] {
   border-bottom: none;
   /* 1 */
   text-decoration: underline;
   /* 2 */
   text-decoration: underline dotted;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-/* line 125, ../../styles/_reset.scss */
 b,
 strong {
-  font-weight: inherit;
-}
+  font-weight: inherit; }
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 134, ../../styles/_reset.scss */
 b,
 strong {
-  font-weight: bolder;
-}
+  font-weight: bolder; }
 
 /**
  * Add the correct font style in Android 4.3-.
  */
-/* line 143, ../../styles/_reset.scss */
 dfn {
-  font-style: italic;
-}
+  font-style: italic; }
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-/* line 152, ../../styles/_reset.scss */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
-}
+  margin: 0.67em 0; }
 
 /**
  * Add the correct background and color in IE 9-.
  */
-/* line 161, ../../styles/_reset.scss */
 mark {
   background-color: #ff0;
-  color: #000;
-}
+  color: #000; }
 
 /**
  * Add the correct font size in all browsers.
  */
-/* line 170, ../../styles/_reset.scss */
 small {
-  font-size: 80%;
-}
+  font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-/* line 179, ../../styles/_reset.scss */
 sub,
 sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
-/* line 187, ../../styles/_reset.scss */
 sub {
-  bottom: -0.25em;
-}
+  bottom: -0.25em; }
 
-/* line 191, ../../styles/_reset.scss */
 sup {
-  top: -0.5em;
-}
+  top: -0.5em; }
 
 /* Embedded content
    ========================================================================== */
 /**
  * Remove the border on images inside links in IE 10-.
  */
-/* line 202, ../../styles/_reset.scss */
 img {
-  border-style: none;
-}
+  border-style: none; }
 
 /**
  * Hide the overflow in IE.
  */
-/* line 210, ../../styles/_reset.scss */
 svg:not(:root) {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 /* Grouping content
    ========================================================================== */
@@ -223,7 +181,6 @@ svg:not(:root) {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-/* line 222, ../../styles/_reset.scss */
 code,
 kbd,
 pre,
@@ -231,30 +188,25 @@ samp {
   font-family: monospace, monospace;
   /* 1 */
   font-size: 1em;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Add the correct margin in IE 8.
  */
-/* line 234, ../../styles/_reset.scss */
 figure {
-  margin: 1em 40px;
-}
+  margin: 1em 40px; }
 
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 243, ../../styles/_reset.scss */
 hr {
   box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
   overflow: visible;
-  /* 2 */
-}
+  /* 2 */ }
 
 /* Forms
    ========================================================================== */
@@ -262,7 +214,6 @@ hr {
  * 1. Change font properties to `inherit` in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
-/* line 257, ../../styles/_reset.scss */
 button,
 input,
 optgroup,
@@ -271,85 +222,70 @@ textarea {
   font: inherit;
   /* 1 */
   margin: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Restore the font weight unset by the previous rule.
  */
-/* line 270, ../../styles/_reset.scss */
 optgroup {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-/* line 279, ../../styles/_reset.scss */
 button,
 input {
   /* 1 */
-  overflow: visible;
-}
+  overflow: visible; }
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-/* line 289, ../../styles/_reset.scss */
 button,
 select {
   /* 1 */
-  text-transform: none;
-}
+  text-transform: none; }
 
 /**
  * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
-/* line 300, ../../styles/_reset.scss */
 button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the inner border and padding in Firefox.
  */
-/* line 311, ../../styles/_reset.scss */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
   border-style: none;
-  padding: 0;
-}
+  padding: 0; }
 
 /**
  * Restore the focus styles unset by the previous rule.
  */
-/* line 323, ../../styles/_reset.scss */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
+  outline: 1px dotted ButtonText; }
 
 /**
  * Change the border, margin, and padding in all browsers (opinionated).
  */
-/* line 334, ../../styles/_reset.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
+  padding: 0.35em 0.625em 0.75em; }
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
@@ -357,7 +293,6 @@ fieldset {
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
-/* line 347, ../../styles/_reset.scss */
 legend {
   box-sizing: border-box;
   /* 1 */
@@ -370,82 +305,66 @@ legend {
   padding: 0;
   /* 3 */
   white-space: normal;
-  /* 1 */
-}
+  /* 1 */ }
 
 /**
  * Remove the default vertical scrollbar in IE.
  */
-/* line 360, ../../styles/_reset.scss */
 textarea {
-  overflow: auto;
-}
+  overflow: auto; }
 
 /**
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */
-/* line 369, ../../styles/_reset.scss */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-/* line 379, ../../styles/_reset.scss */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
+  height: auto; }
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-/* line 389, ../../styles/_reset.scss */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
-  /* 2 */
-}
+  /* 2 */ }
 
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
  */
-/* line 398, ../../styles/_reset.scss */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+  -webkit-appearance: none; }
 
 /**
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
-/* line 407, ../../styles/_reset.scss */
 ::-webkit-input-placeholder {
   color: inherit;
-  opacity: 0.54;
-}
+  opacity: 0.54; }
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
-/* line 417, ../../styles/_reset.scss */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   /* 1 */
   font: inherit;
-  /* 2 */
-}
+  /* 2 */ }
 
-/* line 1, ../../styles/auth/_auth.scss */
 .form-outer {
   width: 275px;
   height: auto;
@@ -453,122 +372,86 @@ textarea {
   left: 50%;
   top: 45%;
   margin-left: -150px;
-  margin-top: -150px;
-}
-/* line 9, ../../styles/auth/_auth.scss */
-.form-outer .form-inner {
-  position: relative;
-  background-color: white;
-  border-radius: 3px;
-}
-/* line 13, ../../styles/auth/_auth.scss */
-.form-outer .form-inner input {
-  margin: 16px;
-  width: 88%;
-  height: 40px;
-  font-size: 18px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  border: none;
-  border-bottom: solid 2px #00796B;
-  outline: none;
-}
-/* line 24, ../../styles/auth/_auth.scss */
-.form-outer .form-inner .form-title-box {
-  height: 100px;
-  background: #00796B;
-  text-align: center;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-}
-/* line 30, ../../styles/auth/_auth.scss */
-.form-outer .form-inner .form-title-box .title {
-  font-size: 36px;
-  padding: 28px;
-  margin: 0;
-}
-/* line 36, ../../styles/auth/_auth.scss */
-.form-outer .form-inner .btn-box {
-  height: 50px;
-  margin-top: 15px;
-}
-/* line 39, ../../styles/auth/_auth.scss */
-.form-outer .form-inner .btn-box .form-btn {
-  position: relative;
-  float: left;
-  text-align: center;
-  height: auto;
-  font-size: 20px;
-  border: none;
-  cursor: pointer;
-}
-/* line 47, ../../styles/auth/_auth.scss */
-.form-outer .form-inner .btn-box .form-btn:hover {
-  background-color: #00796b;
-}
-/* line 50, ../../styles/auth/_auth.scss */
-.form-outer .form-inner .btn-box .form-btn.large {
-  width: 60%;
-}
-/* line 53, ../../styles/auth/_auth.scss */
-.form-outer .form-inner .btn-box .form-btn.small {
-  width: 40%;
-}
-/* line 56, ../../styles/auth/_auth.scss */
-.form-outer .form-inner .btn-box .form-btn .text {
-  font-size: 1.2em;
-  margin: 0;
-  padding: 11px;
-}
+  margin-top: -150px; }
+  .form-outer .form-inner {
+    position: relative;
+    background-color: white;
+    border-radius: 3px; }
+    .form-outer .form-inner input {
+      margin: 16px;
+      width: 88%;
+      height: 40px;
+      font-size: 18px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      border: none;
+      border-bottom: solid 2px #00796B;
+      outline: none; }
+    .form-outer .form-inner .form-title-box {
+      height: 100px;
+      background: #00796B;
+      text-align: center;
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px; }
+      .form-outer .form-inner .form-title-box .title {
+        font-size: 36px;
+        padding: 28px;
+        margin: 0; }
+    .form-outer .form-inner .btn-box {
+      height: 50px;
+      margin-top: 15px; }
+      .form-outer .form-inner .btn-box .form-btn {
+        position: relative;
+        float: left;
+        text-align: center;
+        height: auto;
+        font-size: 20px;
+        border: none;
+        cursor: pointer; }
+        .form-outer .form-inner .btn-box .form-btn:hover {
+          background-color: #00796b; }
+        .form-outer .form-inner .btn-box .form-btn.large {
+          width: 60%; }
+        .form-outer .form-inner .btn-box .form-btn.small {
+          width: 40%; }
+        .form-outer .form-inner .btn-box .form-btn .text {
+          font-size: 1.2em;
+          margin: 0;
+          padding: 11px; }
 
-/* line 66, ../../styles/auth/_auth.scss */
 .test-form .test-btn {
   width: auto;
   padding: 22px;
   border: 1px solid;
   float: left;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
-/* line 5, ../../styles/global/_notification.scss */
 .notification-list {
   height: auto;
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 10000;
-}
-/* line 12, ../../styles/global/_notification.scss */
-.notification-list .notification {
-  height: 50px;
-  position: relative;
-  -webkit-transition: height 450ms ease-in-out;
-  transition: height 450ms ease-in-out;
-  overflow: hidden;
-}
-/* line 17, ../../styles/global/_notification.scss */
-.notification-list .notification.fade {
-  height: 0px;
-  -webkit-transition: height 450ms ease-in-out;
-  transition: height 450ms ease-in-out;
-}
-/* line 21, ../../styles/global/_notification.scss */
-.notification-list .notification.error {
-  background-color: rgba(238, 83, 80, 0.9);
-}
-/* line 24, ../../styles/global/_notification.scss */
-.notification-list .notification.success {
-  background-color: rgba(102, 187, 106, 0.9);
-}
-/* line 27, ../../styles/global/_notification.scss */
-.notification-list .notification .message {
-  margin: 0;
-  padding: 14px;
-  text-align: center;
-}
+  z-index: 10000; }
+  .notification-list .notification {
+    height: 50px;
+    position: relative;
+    -webkit-transition: height 450ms ease-in-out;
+    transition: height 450ms ease-in-out;
+    overflow: hidden; }
+    .notification-list .notification.fade {
+      height: 0px;
+      -webkit-transition: height 450ms ease-in-out;
+      transition: height 450ms ease-in-out; }
+    .notification-list .notification.error {
+      background-color: rgba(238, 83, 80, 0.9); }
+    .notification-list .notification.success {
+      background-color: rgba(102, 187, 106, 0.9); }
+    .notification-list .notification .message {
+      margin: 0;
+      padding: 14px;
+      text-align: center; }
 
-/* line 1, ../../styles/global/_modal.scss */
 .modal {
   position: fixed;
   opacity: 0;
@@ -577,82 +460,60 @@ textarea {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 5000;
-}
-/* line 12, ../../styles/global/_modal.scss */
-.modal.fade .modal-inner {
-  -webkit-transform: translateY(-100px);
-          transform: translateY(-100px);
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-}
-/* line 18, ../../styles/global/_modal.scss */
-.modal.fade.in {
-  opacity: 1;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-}
-/* line 21, ../../styles/global/_modal.scss */
-.modal.fade.in .modal-inner {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  height: auto;
-  box-shadow: 0 2px 3px 0 #303030;
-  border-radius: 2px;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  width: auto;
-  padding: 25px;
-}
+  z-index: 5000; }
+  .modal.fade .modal-inner {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; }
+  .modal.fade.in {
+    opacity: 1;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; }
+    .modal.fade.in .modal-inner {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      height: auto;
+      box-shadow: 0 2px 3px 0 #303030;
+      border-radius: 2px;
+      -webkit-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      width: auto;
+      padding: 25px; }
 
-/* line 33, ../../styles/global/_modal.scss */
 .modal-backdrop {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-}
+  background-color: rgba(0, 0, 0, 0.5); }
 
-/* line 40, ../../styles/global/_modal.scss */
 .modal-inner {
   display: inline-block;
   text-align: left;
   background-color: #eee;
   color: #000;
-  padding: 15px;
-}
+  padding: 15px; }
 
-/* line 47, ../../styles/global/_modal.scss */
 #close-modal {
   position: absolute;
   right: 10px;
   top: 10px;
   font-size: 1.3em;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
-/* line 13, ../../styles/style.scss */
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
-/* line 17, ../../styles/style.scss */
 #form {
   margin-left: 35%;
-  margin-right: auto;
-}
+  margin-right: auto; }
 
-/* line 22, ../../styles/style.scss */
 body {
-  background-color: #dadada;
-}
+  background-color: #dadada; }
 
-/* line 27, ../../styles/style.scss */
 .btn {
-  cursor: pointer;
-}
+  cursor: pointer; }
 
-/* line 31, ../../styles/style.scss */
 .nav-bar {
   height: 60px;
   background: aliceblue;
@@ -660,51 +521,39 @@ body {
   margin-bottom: 10px;
   top: 0;
   left: 0;
-  position: relative;
-}
-/* line 39, ../../styles/style.scss */
-.nav-bar .user-icon {
-  position: absolute;
-  right: 1%;
-  padding: 15px;
-  font-size: 25px;
-}
-/* line 45, ../../styles/style.scss */
-.nav-bar .menu {
-  display: inline-block;
-  padding: .8em;
-}
-/* line 48, ../../styles/style.scss */
-.nav-bar .menu .item {
-  float: left;
-  margin: 0;
-  margin-left: 25px;
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
-  border: solid 1px;
-  padding: 0.3em;
-}
-/* line 56, ../../styles/style.scss */
-.nav-bar .menu .item:hover {
-  -webkit-transition: all 200ms ease-in-out;
-  transition: all 200ms ease-in-out;
-  background-color: #a7a7a7;
-}
+  position: relative; }
+  .nav-bar .user-icon {
+    position: absolute;
+    right: 1%;
+    padding: 15px;
+    font-size: 25px; }
+  .nav-bar .menu {
+    display: inline-block;
+    padding: .8em; }
+    .nav-bar .menu .item {
+      float: left;
+      margin: 0;
+      margin-left: 25px;
+      -webkit-transition: all 200ms ease-in-out;
+      transition: all 200ms ease-in-out;
+      cursor: pointer;
+      border: solid 1px;
+      padding: 0.3em; }
+      .nav-bar .menu .item:hover {
+        -webkit-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out;
+        background-color: #a7a7a7; }
 
-/* line 66, ../../styles/style.scss */
 .user-settings-inner input {
   height: 50px;
   width: 100%;
   font-size: 20px;
-  margin-bottom: 15px;
-}
-/* line 72, ../../styles/style.scss */
+  margin-bottom: 15px; }
+
 .user-settings-inner .input-label {
   margin: 0;
-  margin-bottom: 5px;
-}
-/* line 76, ../../styles/style.scss */
+  margin-bottom: 5px; }
+
 .user-settings-inner .btn {
   padding: 15px;
   text-align: center;
@@ -713,69 +562,48 @@ body {
   cursor: pointer;
   background-color: #5496b3;
   font-size: 16px;
-  color: white;
-}
-/* line 85, ../../styles/style.scss */
-.user-settings-inner .btn:hover {
-  background-color: #396b81;
-}
-/* line 89, ../../styles/style.scss */
-.user-settings-inner .section-title {
-  text-align: center;
-}
+  color: white; }
+  .user-settings-inner .btn:hover {
+    background-color: #396b81; }
 
-/* line 94, ../../styles/style.scss */
+.user-settings-inner .section-title {
+  text-align: center; }
+
 #posts-list {
   list-style: none;
-  padding: 0;
-}
-/* line 97, ../../styles/style.scss */
-#posts-list .list-item {
-  width: 75%;
-  margin-left: 12.5%;
-  border: solid 1px;
-  padding: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-}
-/* line 104, ../../styles/style.scss */
-#posts-list .list-item .item-text-box {
-  float: left;
-  width: 90%;
-}
-/* line 107, ../../styles/style.scss */
-#posts-list .list-item .item-text-box .item-text {
-  margin: 0;
-}
-/* line 111, ../../styles/style.scss */
-#posts-list .list-item .menu-box {
-  height: auto;
-  position: absolute;
-  right: 5%;
-  top: 30%;
-}
-/* line 116, ../../styles/style.scss */
-#posts-list .list-item .menu-box .menu-box-icon {
-  font-size: 30px;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
-}
-/* line 119, ../../styles/style.scss */
-#posts-list .list-item .menu-box .menu-box-icon:hover {
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
-}
-/* line 126, ../../styles/style.scss */
-#posts-list.loading {
-  text-align: center;
-  width: 100%;
-}
+  padding: 0; }
+  #posts-list .list-item {
+    width: 75%;
+    margin-left: 12.5%;
+    border: solid 1px;
+    padding: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative; }
+    #posts-list .list-item .item-text-box {
+      float: left;
+      width: 90%; }
+      #posts-list .list-item .item-text-box .item-text {
+        margin: 0; }
+    #posts-list .list-item .menu-box {
+      height: auto;
+      position: absolute;
+      right: 5%;
+      top: 30%; }
+      #posts-list .list-item .menu-box .menu-box-icon {
+        font-size: 30px;
+        -webkit-transition: all 100ms ease-in-out;
+        transition: all 100ms ease-in-out; }
+        #posts-list .list-item .menu-box .menu-box-icon:hover {
+          -webkit-transform: scale(1.25);
+                  transform: scale(1.25);
+          -webkit-transition: all 100ms ease-in-out;
+          transition: all 100ms ease-in-out; }
+  #posts-list.loading {
+    text-align: center;
+    width: 100%; }
 
-/* line 133, ../../styles/style.scss */
 .post-menu .btn {
   padding: 15px;
   text-align: center;
@@ -784,87 +612,64 @@ body {
   cursor: pointer;
   background-color: #5496b3;
   font-size: 16px;
-  color: white;
-}
-/* line 142, ../../styles/style.scss */
-.post-menu .btn:hover {
-  background-color: #396b81;
-}
+  color: white; }
+  .post-menu .btn:hover {
+    background-color: #396b81; }
 
-/* line 150, ../../styles/style.scss */
 .form .btn {
   width: 200px;
-  border: solid 1px;
-}
+  border: solid 1px; }
 
-/* line 157, ../../styles/style.scss */
 .btn.submit-form {
   width: 400px;
   border: solid 1px;
   margin-left: 50%;
   margin-top: 25px;
   position: relative;
-  left: -200px;
-}
-/* line 164, ../../styles/style.scss */
-.btn.submit-form .text {
-  margin: 0;
-  font-size: 25px;
-  padding: 15px;
-  text-align: center;
-}
+  left: -200px; }
+  .btn.submit-form .text {
+    margin: 0;
+    font-size: 25px;
+    padding: 15px;
+    text-align: center; }
 
-/* line 174, ../../styles/style.scss */
 .form-title {
   width: 50%;
   min-width: 300px;
   height: 100px;
-  margin-left: 25%;
-}
-/* line 179, ../../styles/style.scss */
-.form-title input#title {
-  width: 50%;
-  height: 35px;
-  float: left;
-  position: relative;
-  font-size: 18px;
-}
+  margin-left: 25%; }
+  .form-title input#title {
+    width: 50%;
+    height: 35px;
+    float: left;
+    position: relative;
+    font-size: 18px; }
 
-/* line 189, ../../styles/style.scss */
 .title-label {
   position: relative;
   float: left;
   width: 100%;
-  font-size: 20px;
-}
+  font-size: 20px; }
 
-/* line 197, ../../styles/style.scss */
 .form-body {
   width: 50%;
   min-width: 300px;
-  margin-left: 25%;
-}
-/* line 202, ../../styles/style.scss */
-.form-body .new-question-area {
-  width: 100%;
-  height: 200px;
-}
+  margin-left: 25%; }
+  .form-body .new-question-area {
+    width: 100%;
+    height: 200px; }
 
-/* line 209, ../../styles/style.scss */
 #textarea {
   margin-top: 30px;
   width: 400px;
   height: 200px;
   margin-left: 50%;
   left: -200px;
-  position: relative;
-}
+  position: relative; }
 
-/* line 217, ../../styles/style.scss */
 #press {
   width: 100px;
   padding: 15px;
   margin-left: 50%;
   left: -50px;
-  position: relative;
-}
+  position: relative; }

@@ -4,7 +4,7 @@ var path = require('path');
 
 //css
 var compass = require('gulp-compass'),
-   // sass = require('gulp-sass'),
+   sass = require('gulp-sass'),
    autoprefixer = require('gulp-autoprefixer'),
    minifycss  = require('gulp-cssnano'),
    watch = gulp.watch,
@@ -19,16 +19,16 @@ gulp.task('watch', ['css-dev'], function() {
 });
 gulp.task('css-dev', function() {
    return gulp.src('./styles/**/*.scss')
-      .pipe(compass({
-         sass     : './styles',
-         css      : CSS_BUILD_DIR,
-         logging  : true,
-         comments : true,
-      }))
-      .on('error', function(err) {
-         gutil.log("Gulp Error in 'Development Task'", err.toString());
-         this.emit('end'); //resumes watch after error
-      })
+    //   .pipe(compass({
+    //      sass     : './styles',
+    //      css      : CSS_BUILD_DIR,
+    //      logging  : true,
+    //      comments : true,
+    //   }))
+    .pipe(sass().on('error', function(err) {
+       gutil.log("Gulp Error in 'Development Task'", err.toString());
+       this.emit('end'); //resumes watch after error
+    }))
       .pipe(autoprefixer())
       .pipe(gulp.dest(CSS_BUILD_DIR))
 });
